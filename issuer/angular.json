@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alice-controller": {
+    "issuer-controller": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
