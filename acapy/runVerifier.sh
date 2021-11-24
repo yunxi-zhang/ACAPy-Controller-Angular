@@ -7,7 +7,7 @@ docker run -p 9001:9001  --name verifier --network=bridge -it bcgovimages/aries-
 -ot http \
 --admin 0.0.0.0 9001 \
 --admin-insecure-mode \
--e http://172.17.0.3:9000/ \
+-e http://172.17.0.4:9000/ \
 --genesis-url  https://raw.githubusercontent.com/sovrin-foundation/sovrin/stable/sovrin/pool_transactions_builder_genesis \
 --wallet-type indy \
 --wallet-name verifierwallet \
