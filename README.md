@@ -1,5 +1,5 @@
 ## Repo Description
-This repo is mainly used to run as a frontend controller app that connects to a local Hyperledger ACA-Py agent.
+This repo is mainly used to run as a frontend controller app that connects to a local Hyperledger ACA-Py agent. It's based on the alice-controller Angular app in [Hyperledger's aries-acapy-controllers repo](https://github.com/hyperledger/aries-acapy-controllers/tree/main/AliceFaberAcmeDemo/controllers).
 
 ## Prerequisites
 1. OS: MacOS 11.6.1 (properly tested) or Unix/Linux(not properly tested yet).
