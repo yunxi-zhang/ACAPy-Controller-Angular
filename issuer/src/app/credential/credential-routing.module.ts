@@ -9,7 +9,11 @@ const routes: Routes = [
     path: '',
     component: CredentialComponent,
     children: [
-      { path: '', component: CredentialListComponent }
+      { path: 'issued', component: CredentialListComponent },
+      { path: 'available', component: CredentialListComponent },
+      { path: 'requested', component: CredentialListComponent },
+      { path: 'revoked', component: CredentialListComponent },
+      { path: '', redirectTo: 'issued' },
     ]
   }
 ];
