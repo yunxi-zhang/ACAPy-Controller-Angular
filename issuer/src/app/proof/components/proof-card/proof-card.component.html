@@ -18,6 +18,28 @@
                 <p>{{ proof?.presentation_exchange_id }}</p>
             </div>
         </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">Requested Attributes:&nbsp;</small>
+                <p *ngFor="let attr of proof?.presentation_request?.requested_attributes?.additionalProp1 | keyvalue">
+                    <span>{{ attr.key }}:{{ attr.value}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">Requested Attributes:&nbsp;</small>
+                <p *ngFor="let attr of proof?.presentation_request?.requested_predicates?.additionalProp2 | keyvalue">
+                    <span>{{ attr.value}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">Not Expired Until:&nbsp;</small>
+                <p>{{ proof?.presentation_request?.non_revoked?.to }}</p>
+            </div>
+        </div>
     </div>
     <div class="card-footer">
         <p class="card-text">
