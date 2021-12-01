@@ -6,8 +6,8 @@
         <ng-container *ngIf="connection?.state === 'active' || connection?.state === 'request';else invitation">
             <div class="card-title">
                 <small>
-                    <span *ngIf="connection?.initiator === 'self'">Sent&nbsp;</span>
-                    <span *ngIf="connection?.initiator === 'external'">Received&nbsp;</span>
+                    <span *ngIf="connection?.their_role === 'invitee'">Invitation sent on &nbsp;</span>
+                    <span *ngIf="connection?.initiator === 'inviter'">Invitation received on &nbsp;</span>
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
@@ -15,14 +15,21 @@
                 <span>
                     <small *ngIf="connection?.initiator === 'self'" class="text-muted">To:&nbsp;</small>
                     <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
+                    <small class="text-muted">Counterparty's Name:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_label }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">DID:</small>&nbsp;
+                    <small class="text-muted">Counterparty's DID:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_did }}</span>
+            </div>
+            <div class="card-text">
+                <span>
+                    <small class="text-muted">Connection State:</small>&nbsp;
+                </span>
+                <span>{{ connection?.state }}</span>
             </div>
         </ng-container>
         <ng-template #invitation>
