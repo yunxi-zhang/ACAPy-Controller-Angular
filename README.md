@@ -54,6 +54,14 @@ cd ./acapy
 docker-compose up
 ```
 
+## Run A Indy Tails Server as Credential Revocation Registry
+The Indy tails server is a docker image built based on the offical Indy tails server's docker file and pushed to my personal docker hub account. It uses the docker's built-in bridge network that will habe the 3 ACA-Py agents together. It is assumed this Indy tails server will run with a docker IP:172.17.0.5, which is hardcoded in the runIssuer.sh file for running an Issuer agent.<br>
+
+Run the command to set up a indy tails server.
+```
+./acapy/runIndyTailsServer.sh
+```
+
 ## Run the Frontend App
 1. Move to the right folder
 ```
