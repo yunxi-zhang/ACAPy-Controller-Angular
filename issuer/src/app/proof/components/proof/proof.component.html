@@ -1,2 +1,7 @@
-<app-component-nav></app-component-nav>
+<app-component-nav>
+    <a class="nav-item nav-link" routerLink="requested" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">Requested</a>
+    <a class="nav-item nav-link" routerLink="received" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">Received</a>
+</app-component-nav>
 <router-outlet></router-outlet>
