@@ -15,7 +15,7 @@ export class InterceptorService implements HttpInterceptor {
     this.hostname = $ENV.ALICE_AGENT_HOST || 'localhost';
     this.port = $ENV.RUNMODE === 'pwd' ? '' : ':7001';
     this.formattedAgentUrl = `http://${this.hostname}` + this.port;
-    console.log('Agent is running on: ' + this.formattedAgentUrl);
+    console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler):
