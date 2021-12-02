@@ -17,4 +17,5 @@ docker run -p 7001:7001  --name issuer --network=bridge -it bcgovimages/aries-cl
 --auto-provision \
 --auto-accept-invites \
 --auto-accept-requests \
---auto-ping-connection 
+--auto-ping-connection \
+--tails-server-base-url http://172.17.0.5:9000
