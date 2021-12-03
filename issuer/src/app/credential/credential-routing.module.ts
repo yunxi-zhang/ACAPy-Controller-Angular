@@ -10,9 +10,9 @@ const routes: Routes = [
     component: CredentialComponent,
     children: [
       { path: 'issued', component: CredentialListComponent },
-      { path: 'available', component: CredentialListComponent },
       { path: 'requested', component: CredentialListComponent },
       { path: 'revoked', component: CredentialListComponent },
+      { path: 'new', component: CredentialListComponent },
       { path: '', redirectTo: 'issued' },
     ]
   }
