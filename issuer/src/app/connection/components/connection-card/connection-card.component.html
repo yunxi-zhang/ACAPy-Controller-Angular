@@ -13,6 +13,12 @@
             </div>
             <div class="card-text">
                 <span>
+                    <small class="text-muted">Connection ID:</small>&nbsp;
+                </span>
+                <span>{{ connection?.connection_id }}</span>
+            </div>
+            <div class="card-text">
+                <span>
                     <small *ngIf="connection?.initiator === 'self'" class="text-muted">To:&nbsp;</small>
                     <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
                     <small class="text-muted">Counterparty's Name:</small>&nbsp;
