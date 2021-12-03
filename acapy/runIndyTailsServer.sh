@@ -1,4 +1,6 @@
 #!/bin/bash
+docker stop tails-server
+docker rm tails-server
 
 docker run \
 --name tails-server \
