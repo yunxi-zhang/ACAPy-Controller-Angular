@@ -7,7 +7,7 @@
             <div class="card-title">
                 <small>
                     <span *ngIf="connection?.their_role === 'invitee'">Invitation sent on &nbsp;</span>
-                    <span *ngIf="connection?.initiator === 'inviter'">Invitation received on &nbsp;</span>
+                    <span *ngIf="connection?.their_role === 'inviter'">Invitation received on &nbsp;</span>
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
