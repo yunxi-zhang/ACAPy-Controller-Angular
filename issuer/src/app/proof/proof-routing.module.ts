@@ -9,9 +9,10 @@ const routes: Routes = [
     path: '',
     component: ProofComponent,
     children: [
-      { path: 'requested', component: ProofListComponent },
       { path: 'received', component: ProofListComponent },
-      { path: '', redirectTo: 'requested' }
+      { path: 'requested', component: ProofListComponent },
+      { path: 'new', component: ProofListComponent },
+      { path: '', redirectTo: 'received' }
     ]
   }
 ];
