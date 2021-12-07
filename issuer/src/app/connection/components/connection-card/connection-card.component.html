@@ -62,13 +62,13 @@
                     <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
                     <small class="text-muted">Counterparty's Name:</small>&nbsp;
                 </span>
-                <span>{{ connection?.their_label }}</span>
+                <span>{{ connection?.their_label || 'N/A' }}</span>
             </div>
             <div class="card-text">
                 <span>
                     <small class="text-muted">Counterparty's DID:</small>&nbsp;
                 </span>
-                <span>{{ connection?.their_did }}</span>
+                <span>{{ connection?.their_did || 'N/A' }}</span>
             </div>
             <div class="card-text">
                 <span>
