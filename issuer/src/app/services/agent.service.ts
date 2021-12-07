@@ -57,6 +57,14 @@ export class AgentService {
       );
   }
 
+  getCredentialRecords(): Observable<any[]> {
+    return this.http.get<any[]>('/issue-credential-2.0/records')
+    .pipe(
+      switchMap((response: any) => of(response.results)),
+      catchError(this.handleError<any[]>('getCredentials', []))
+    );
+  }
+
   getCredentials(): Observable<any[]> {
     return this.http.get<any[]>('/credentials')
       .pipe(
