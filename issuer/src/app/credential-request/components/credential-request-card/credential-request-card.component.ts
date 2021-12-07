@@ -10,7 +10,6 @@ export class CredentialRequestCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('credentialRequest:', this.credentialRequest);
   }
 
 }
