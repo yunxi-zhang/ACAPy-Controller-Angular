@@ -1,5 +1,6 @@
 [
     { "label": "Connections", "url": "/connections" },
+    { "label": "Credential Requests", "url": "/credentialRequests" },
     { "label": "Credentials", "url": "/credentials" },
     { "label": "Proofs", "url": "/proofs" }
 ]

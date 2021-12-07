@@ -10,6 +10,10 @@ const routes: Routes = [
     loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionModule),
   },
   {
+    path: 'credentialRequests',
+    loadChildren: () => import('./credential-request/credential-request.module').then(m => m.CredentialRequestModule),
+  },
+  {
     path: 'credentials',
     loadChildren: () => import('./credential/credential.module').then(m => m.CredentialModule),
   },
