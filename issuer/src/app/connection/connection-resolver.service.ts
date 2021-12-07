@@ -18,7 +18,7 @@ export class ConnectionResolverService implements Resolve<any[]> {
       .pipe(
         map((connections: any[]) => {
           if (route.routeConfig.path === 'active') {
-            return connections.filter((connection: any) => connection.state === 'active' || connection.state === 'request');
+            return connections.filter((connection: any) => connection.state === 'active');
           } else if (route.routeConfig.path === 'pending') {
             return connections.filter((connection: any) => connection.state === 'invitation');
           } else {

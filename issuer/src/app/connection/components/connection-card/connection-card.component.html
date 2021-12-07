@@ -3,11 +3,10 @@
         <button type="button" class="close" aria-label="Close" (click)="removeConnection(connection)">
             <span aria-hidden="true">&times;</span>
         </button>
-        <ng-container *ngIf="connection?.state === 'active' || connection?.state === 'request';else invitation">
+        <ng-container *ngIf="connection?.state === 'active';else invitation">
             <div class="card-title">
                 <small>
-                    <span *ngIf="connection?.their_role === 'invitee'">Invitation sent on &nbsp;</span>
-                    <span *ngIf="connection?.their_role === 'inviter'">Invitation received on &nbsp;</span>
+                    <span>Invitation received on &nbsp;</span>
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
@@ -35,27 +34,53 @@
                 <span>
                     <small class="text-muted">Connection State:</small>&nbsp;
                 </span>
-                <span>{{ connection?.state }}</span>
+                <span>{{ connection?.state | titlecase }}</span>
             </div>
             <div class="card-text">
                 <span>
                     <small class="text-muted">Invitation Mode:</small>&nbsp;
                 </span>
-                <span>{{ connection?.invitation_mode }}</span>
+                <span>{{ connection?.invitation_mode | titlecase  }}</span>
             </div>
         </ng-container>
         <ng-template #invitation>
             <div class="card-title">
                 <small>
-                    <span>Created</span>&nbsp;
+                    <span>Invitation created on</span>&nbsp;
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
             <div class="card-text">
-                <div>
-                    <small class="text-muted">Connection ID:</small>
-                </div>
+                <span>
+                    <small class="text-muted">Connection ID:</small>&nbsp;
+                </span>
                 <span>{{ connection?.connection_id }}</span>
+            </div>
+            <div class="card-text">
+                <span>
+                    <small *ngIf="connection?.initiator === 'self'" class="text-muted">To:&nbsp;</small>
+                    <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
+                    <small class="text-muted">Counterparty's Name:</small>&nbsp;
+                </span>
+                <span>{{ connection?.their_label }}</span>
+            </div>
+            <div class="card-text">
+                <span>
+                    <small class="text-muted">Counterparty's DID:</small>&nbsp;
+                </span>
+                <span>{{ connection?.their_did }}</span>
+            </div>
+            <div class="card-text">
+                <span>
+                    <small class="text-muted">Connection State:</small>&nbsp;
+                </span>
+                <span>{{ connection?.state | titlecase  }}</span>
+            </div>
+            <div class="card-text">
+                <span>
+                    <small class="text-muted">Invitation Mode:</small>&nbsp;
+                </span>
+                <span>{{ connection?.invitation_mode | titlecase }}</span>
             </div>
         </ng-template>
     </div>
