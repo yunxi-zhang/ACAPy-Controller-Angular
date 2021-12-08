@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AgentService } from 'src/app/services/agent.service';
 import { map } from 'rxjs/operators';
 
@@ -9,14 +10,13 @@ import { map } from 'rxjs/operators';
 })
 export class CredentialRequestListComponent implements OnInit {
   credentialRequests: any[] = [];
-  constructor(private agentService: AgentService) { }
+  constructor(private agentService: AgentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.agentService.getCredentialRecords()
-    .pipe(
-      map((credentialRequests: any[]) => this.credentialRequests = credentialRequests)
-    )
-    .subscribe();
+    this.route.data
+      .pipe(
+        map((data: { CredentialRequestResolverService: any[] }) => this.credentialRequests = data.CredentialRequestResolverService || [])
+      )
+      .subscribe(data => console.log('data:', data));
   }
-
 }

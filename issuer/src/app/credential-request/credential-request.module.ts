@@ -5,13 +5,15 @@ import { CredentialRequestRoutingModule } from './credential-request-routing.mod
 import { CredentialRequestComponent } from './components/credential-request/credential-request.component';
 import { CredentialRequestListComponent } from './components/credential-request-list/credential-request-list.component';
 import { CredentialRequestCardComponent } from './components/credential-request-card/credential-request-card.component';
+import { NewCredentialRequestComponent } from './components/new-credential-request/new-credential-request.component';
 
 
 @NgModule({
   declarations: [
     CredentialRequestComponent,
     CredentialRequestListComponent,
-    CredentialRequestCardComponent
+    CredentialRequestCardComponent,
+    NewCredentialRequestComponent
   ],
   imports: [
     CommonModule,

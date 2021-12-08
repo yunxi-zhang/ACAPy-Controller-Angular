@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CredentialRequestResolverResolver } from './credential-request-resolver.resolver';
+import { CredentialRequestResolverService } from './credential-request-resolver.service';
 
 describe('CredentialRequestResolverResolver', () => {
-  let resolver: CredentialRequestResolverResolver;
+  let resolver: CredentialRequestResolverService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    resolver = TestBed.inject(CredentialRequestResolverResolver);
+    resolver = TestBed.inject(CredentialRequestResolverService);
   });
 
   it('should be created', () => {
