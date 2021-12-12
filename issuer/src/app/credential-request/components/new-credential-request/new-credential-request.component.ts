@@ -8,9 +8,8 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./new-credential-request.component.scss']
 })
 export class NewCredentialRequestComponent implements OnInit {
-  public request: any;
-  public requestObject = '';
-  public requestUrl = '';
+  public credentialRequest: any;
+  public credentialRequestObject = '';
   
   constructor(private agentService: AgentService) { }
 
@@ -25,11 +24,10 @@ export class NewCredentialRequestComponent implements OnInit {
   onSubmit() {
     this.agentService.createCredentialRequest()
       .pipe(
-        filter((request: any) => !!request),
-        map((request: any) => {
-          this.request = request;
-          this.requestObject = this.request && JSON.stringify(this.request.request, null, 4) || '';
-          this.requestUrl = this.request && this.request.request_url || '';
+        filter((credentialRequest: any) => !!credentialRequest),
+        map((credentialRequest: any) => {
+          this.credentialRequest = credentialRequest;
+          this.credentialRequestObject = this.credentialRequest && JSON.stringify(this.credentialRequest, null, 4) || '';
         })
       )
       .subscribe();

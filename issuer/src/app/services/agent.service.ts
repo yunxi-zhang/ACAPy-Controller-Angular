@@ -49,6 +49,44 @@ export class AgentService {
       );
   }
 
+  createCredentialRequest(): Observable<any> {
+    var bodyPayload: any = {
+      "auto_remove": true,
+      "comment": "string",
+      "connection_id": "74b3048e-c6a2-45b2-9ba5-7b67c69b5d70",
+      "credential_preview": {
+        "@type": "issue-credential/2.0/credential-preview",
+        "attributes": [
+          {
+            "name": "lastname",
+            "value": "Peter"
+          },
+          {
+            "name": "firstname",
+            "value": "Pan"
+          },
+          {
+            "name": "age",
+            "value": "14"
+          }
+        ]
+      },
+      "filter": {
+        "dif": {
+          "some_dif_criterion": "string"
+        },
+        "indy": {
+        }
+      },
+      "trace": false
+    };
+    return this.http.post<any>('/issue-credential-2.0/send-proposal', bodyPayload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('createCredentialRequest', null))
+      );
+  }
+
   receiveInvitation(invitation: any): Observable<any> {
     return this.http.post<any>('/connections/receive-invitation', invitation)
       .pipe(
@@ -57,12 +95,12 @@ export class AgentService {
       );
   }
 
-  getCredentialRecords(): Observable<any[]> {
+  getCredentialRequestRecords(): Observable<any[]> {
     return this.http.get<any[]>('/issue-credential-2.0/records')
-    .pipe(
-      switchMap((response: any) => of(response.results)),
-      catchError(this.handleError<any[]>('getCredentials', []))
-    );
+      .pipe(
+        switchMap((response: any) => of(response.results)),
+        catchError(this.handleError<any[]>('getCredentials', []))
+      );
   }
 
   getCredentials(): Observable<any[]> {
