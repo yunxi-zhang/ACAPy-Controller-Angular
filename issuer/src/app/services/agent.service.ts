@@ -5,6 +5,7 @@ import { AgentStatus } from '../enums/agent-status.enum';
 
 import { Observable, of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
+import { NewCredentialRequest } from '../models/new-credential-request';
 
 @Injectable({
   providedIn: 'root'
@@ -49,38 +50,8 @@ export class AgentService {
       );
   }
 
-  createCredentialRequest(): Observable<any> {
-    var bodyPayload: any = {
-      "auto_remove": true,
-      "comment": "string",
-      "connection_id": "74b3048e-c6a2-45b2-9ba5-7b67c69b5d70",
-      "credential_preview": {
-        "@type": "issue-credential/2.0/credential-preview",
-        "attributes": [
-          {
-            "name": "lastname",
-            "value": "Peter"
-          },
-          {
-            "name": "firstname",
-            "value": "Pan"
-          },
-          {
-            "name": "age",
-            "value": "14"
-          }
-        ]
-      },
-      "filter": {
-        "dif": {
-          "some_dif_criterion": "string"
-        },
-        "indy": {
-        }
-      },
-      "trace": false
-    };
-    return this.http.post<any>('/issue-credential-2.0/send-proposal', bodyPayload)
+  createCredentialRequest(payload: any): Observable<any> {
+    return this.http.post<any>('/issue-credential-2.0/send-proposal', payload)
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('createCredentialRequest', null))

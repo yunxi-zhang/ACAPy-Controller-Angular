@@ -17,6 +17,6 @@ export class CredentialRequestListComponent implements OnInit {
       .pipe(
         map((data: { CredentialRequestResolverService: any[] }) => this.credentialRequests = data.CredentialRequestResolverService || [])
       )
-      .subscribe(data => console.log('data:', data));
+      .subscribe();
   }
 }

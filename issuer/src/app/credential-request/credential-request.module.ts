@@ -6,7 +6,7 @@ import { CredentialRequestComponent } from './components/credential-request/cred
 import { CredentialRequestListComponent } from './components/credential-request-list/credential-request-list.component';
 import { CredentialRequestCardComponent } from './components/credential-request-card/credential-request-card.component';
 import { NewCredentialRequestComponent } from './components/new-credential-request/new-credential-request.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { NewCredentialRequestComponent } from './components/new-credential-reque
   imports: [
     CommonModule,
     SharedModule,
-    CredentialRequestRoutingModule
+    CredentialRequestRoutingModule,
+    FormsModule
   ]
 })
 export class CredentialRequestModule { }

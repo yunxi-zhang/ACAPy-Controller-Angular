@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgentService } from 'src/app/services/agent.service';
 import { filter, map } from 'rxjs/operators';
+import { NewCredentialRequest } from 'src/app/models/new-credential-request';
 
 @Component({
   selector: 'app-new-credential-request',
@@ -10,6 +11,11 @@ import { filter, map } from 'rxjs/operators';
 export class NewCredentialRequestComponent implements OnInit {
   public credentialRequest: any;
   public credentialRequestObject = '';
+  public payload: any;
+  public connectionID: String;
+  public comment: String;
+  public attributeName: any;
+  public attributeValue: any;
   
   constructor(private agentService: AgentService) { }
 
@@ -22,7 +28,8 @@ export class NewCredentialRequestComponent implements OnInit {
   }
 
   onSubmit() {
-    this.agentService.createCredentialRequest()
+    this.payload = new NewCredentialRequest().addNewAttributeKeyPair(this.attributeName, this.attributeValue, this.connectionID, this.comment);
+    this.agentService.createCredentialRequest(this.payload.bodyPayloadTemplate)
       .pipe(
         filter((credentialRequest: any) => !!credentialRequest),
         map((credentialRequest: any) => {
