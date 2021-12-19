@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AgentStatus } from '../enums/agent-status.enum';
 
 import { Observable, of } from 'rxjs';
-import { catchError, switchMap } from 'rxjs/operators';
+import { catchError, switchMap, map } from 'rxjs/operators';
 import { NewCredentialRequest } from '../models/new-credential-request';
 
 @Injectable({
@@ -27,6 +27,14 @@ export class AgentService {
       .pipe(
         switchMap((response: any) => of(response.results)),
         catchError(this.handleError<any[]>('getConnections', []))
+      );
+  }
+
+  getSchemas(schemaID: String): Observable<any[]> {
+    return this.http.get<any[]>('/schemas/' + schemaID)
+      .pipe(
+        switchMap((response: any) => of(response.schema)),
+        catchError(this.handleError<any[]>('getSchemas', []))
       );
   }
 
