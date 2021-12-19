@@ -15,21 +15,31 @@ export class NewCredentialRequestComponent implements OnInit {
   public connectionID: String;
   public comment: String;
   public attributeName: any;
-  public attributeValue: any;
+  public attributeValue: any[];
+  public schema: any;
+  public schemaID: any;
+  public attributeNumber: any;
   
   constructor(private agentService: AgentService) { }
 
-  ngOnInit(): void {
-    this.comment = "This is a default comment";
-  }
+  ngOnInit(): void {  }
 
-  copy(el: HTMLInputElement | HTMLTextAreaElement) {
-    el.select();
-    document.execCommand('copy');
+  onSearch() {
+    this.agentService.getSchemas(this.schemaID)
+    .pipe(
+      map((schema: any) => {
+        this.schema = schema;
+        this.attributeNumber = schema.attrNames.length;
+        console.log('index:', this.attributeNumber);
+      })
+    )
+    .subscribe()
   }
 
   onSubmit() {
+    console.log('attribute value:', this.attributeValue);
     this.payload = new NewCredentialRequest().addNewAttributeKeyPair(this.attributeName, this.attributeValue, this.connectionID, this.comment);
+    console.log('payload:', this.payload);
     this.agentService.createCredentialRequest(this.payload.bodyPayloadTemplate)
       .pipe(
         filter((credentialRequest: any) => !!credentialRequest),
