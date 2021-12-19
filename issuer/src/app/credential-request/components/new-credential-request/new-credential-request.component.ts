@@ -10,7 +10,7 @@ import { NewCredentialRequest } from 'src/app/models/new-credential-request';
 })
 export class NewCredentialRequestComponent implements OnInit {
   public credentialRequest: any;
-  public credentialRequestObject = '';
+  public credentialRequestObject: any;
   public payload: any;
   public connectionID: String;
   public comment: String;
@@ -20,6 +20,7 @@ export class NewCredentialRequestComponent implements OnInit {
   constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
+    this.comment = "This is a default comment";
   }
 
   copy(el: HTMLInputElement | HTMLTextAreaElement) {
@@ -35,6 +36,7 @@ export class NewCredentialRequestComponent implements OnInit {
         map((credentialRequest: any) => {
           this.credentialRequest = credentialRequest;
           this.credentialRequestObject = this.credentialRequest && JSON.stringify(this.credentialRequest, null, 4) || '';
+          this.credentialRequestObject = JSON.parse(this.credentialRequestObject);
         })
       )
       .subscribe();
