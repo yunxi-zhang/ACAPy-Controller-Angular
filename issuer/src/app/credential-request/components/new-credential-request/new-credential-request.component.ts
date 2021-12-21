@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AgentService } from 'src/app/services/agent.service';
 import { filter, map } from 'rxjs/operators';
 import { NewCredentialRequest } from 'src/app/models/new-credential-request';
@@ -14,8 +14,7 @@ export class NewCredentialRequestComponent implements OnInit {
   public payload: any;
   public connectionID: String;
   public comment: String;
-  public attributeName: any;
-  public attributeValue: any[];
+  public attributeValues: string[] = [];
   public schema: any;
   public schemaID: any;
   public attributeNumber: any;
@@ -29,17 +28,13 @@ export class NewCredentialRequestComponent implements OnInit {
     .pipe(
       map((schema: any) => {
         this.schema = schema;
-        this.attributeNumber = schema.attrNames.length;
-        console.log('index:', this.attributeNumber);
       })
     )
     .subscribe()
   }
 
   onSubmit() {
-    console.log('attribute value:', this.attributeValue);
-    this.payload = new NewCredentialRequest().addNewAttributeKeyPair(this.attributeName, this.attributeValue, this.connectionID, this.comment);
-    console.log('payload:', this.payload);
+    this.payload = new NewCredentialRequest().addNewAttributeKeyPair(this.schema.attrNames, this.attributeValues, this.connectionID, this.comment);
     this.agentService.createCredentialRequest(this.payload.bodyPayloadTemplate)
       .pipe(
         filter((credentialRequest: any) => !!credentialRequest),
@@ -51,5 +46,4 @@ export class NewCredentialRequestComponent implements OnInit {
       )
       .subscribe();
   }
-
 }

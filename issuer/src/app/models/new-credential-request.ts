@@ -2,11 +2,14 @@ export class NewCredentialRequest {
     newAttributeKeyValuePair: any = {};
     constructor() {
     }
-    addNewAttributeKeyPair(attributeName, attributeValue, connectionID, comment) {
+    addNewAttributeKeyPair(attributeName: string[], attributeValue: string[], connectionID, comment) {
         //dynamically update values in the bodyPayloadTemplate
-        this.newAttributeKeyValuePair.name = attributeName;
-        this.newAttributeKeyValuePair.value = attributeValue;
-        this.bodyPayloadTemplate.credential_preview.attributes.push(this.newAttributeKeyValuePair);
+        for (let i = 0; i < attributeName.length; i++) {
+            this.attributePair = {};
+            this.attributePair['name'] = attributeName[i];
+            this.attributePair['value'] = attributeValue[i];
+            this.bodyPayloadTemplate.credential_preview.attributes.push(this.attributePair);
+        }
         this.bodyPayloadTemplate.connection_id = connectionID;
         this.bodyPayloadTemplate.comment = comment;
         //TO DO
@@ -31,4 +34,6 @@ export class NewCredentialRequest {
         },
         "trace": false
     };
+
+    attributePair: any;
 }
