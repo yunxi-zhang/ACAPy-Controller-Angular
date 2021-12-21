@@ -1,5 +1,23 @@
 <div class="card-columns">
-    <app-schema-card *ngFor="let schemaID of schemaIDs" [schemaID]="schemaID"></app-schema-card>
+    <div class="container">
+        <div class="card shadow-sm" style="width: 40rem;">
+            <div class="card-title">
+                <span>Search All Issuer's Created Schemas</span>
+            </div>
+            <div class="card-body" style="width: 25rem;">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Issuer's Public DID"
+                        aria-label="Issuer's Schema ID" aria-describedby="basic-addon2" style="width: 20px;"
+                        [(ngModel)]="issuerPublicDID">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" (click)="onSearch()"
+                            class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-schema-card *ngFor="let schemaID of schemaIDs" [schemaID]="schemaID"></app-schema-card>
+    </div>
 </div>
 
 <app-empty-list *ngIf="!schemaIDs?.length"></app-empty-list>

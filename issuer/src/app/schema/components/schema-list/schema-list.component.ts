@@ -11,10 +11,15 @@ import { map } from 'rxjs/operators';
 })
 export class SchemaListComponent implements OnInit {
   schemaIDs: any[] = [];
+  issuerPublicDID: string;
   constructor(private agentService: AgentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.agentService.getCreatedSchemas("MtSBSkitb28PSoCj9EpSDs")
+    
+  }
+
+  onSearch() {
+    this.agentService.getCreatedSchemas(this.issuerPublicDID)
     .pipe(
       map((schemas: any) => {
         this.schemaIDs = schemas.schema_ids;
