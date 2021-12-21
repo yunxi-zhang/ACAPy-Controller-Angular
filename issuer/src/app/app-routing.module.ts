@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { NavCardListComponent } from './components/nav-card-list/nav-card-list.component';
 
 const routes: Routes = [
   { path: '', component: NavCardListComponent },
+  {
+    path: 'schemas',
+    loadChildren: () => import('./schema/schema.module').then(m => m.SchemaModule),
+  },
   {
     path: 'connections',
     loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionModule),

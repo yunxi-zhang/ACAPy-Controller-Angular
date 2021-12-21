@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { AgentStatus } from '../enums/agent-status.enum';
-
 import { Observable, of } from 'rxjs';
-import { catchError, switchMap, map } from 'rxjs/operators';
-import { NewCredentialRequest } from '../models/new-credential-request';
+import { catchError, switchMap, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -30,9 +27,18 @@ export class AgentService {
       );
   }
 
+  getCreatedSchemas(issuerPublicDID: String): Observable<any[]> {
+    return this.http.get<any[]>(`/schemas/created?schema_issuer_did=${issuerPublicDID}`)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any[]>('getSchemas', []))
+      );
+  }
+
   getSchemas(schemaID: String): Observable<any[]> {
     return this.http.get<any[]>('/schemas/' + schemaID)
       .pipe(
+        tap(res => console.log('response in schema:', res)),
         switchMap((response: any) => of(response.schema)),
         catchError(this.handleError<any[]>('getSchemas', []))
       );

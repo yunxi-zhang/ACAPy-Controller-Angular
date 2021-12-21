@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AgentService } from 'src/app/services/agent.service';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class CredentialRequestListComponent implements OnInit {
   credentialRequests: any[] = [];
-  constructor(private agentService: AgentService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.data
