@@ -1,10 +1,12 @@
 <div class="card-columns">
     <div class="container">
-        <div class="card shadow-sm" style="width: 40rem;">
-            <div class="card-title">
-                <span>Search All Issuer's Created Schemas</span>
-            </div>
+        <div class="card shadow-sm">
             <div class="card-body" style="width: 25rem;">
+                <div class="card-title">
+                    <small>
+                        <span>Search All Issuer's Created Schemas</span>
+                    </small>
+                </div>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Issuer's Public DID"
                         aria-label="Issuer's Schema ID" aria-describedby="basic-addon2" style="width: 20px;"
@@ -16,6 +18,15 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="container">
+        <h3><span class="badge badge-success">Search Result</span></h3>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="container">
         <app-schema-card *ngFor="let schemaID of schemaIDs" [schemaID]="schemaID"></app-schema-card>
     </div>
 </div>
