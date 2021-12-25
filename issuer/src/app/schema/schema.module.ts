@@ -9,7 +9,6 @@ import { SchemaListComponent } from './components/schema-list/schema-list.compon
 import { SchemaCardComponent } from './components/schema-card/schema-card.component';
 
 
-
 @NgModule({
   declarations: [
     SchemaComponent,

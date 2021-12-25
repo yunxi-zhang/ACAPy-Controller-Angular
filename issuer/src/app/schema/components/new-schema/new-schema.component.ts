@@ -40,8 +40,6 @@ export class NewSchemaComponent {
           this.schema = schemas;
           this.schemaObject = this.schema && JSON.stringify(this.schema, null, 4) || '';
           this.schemaObject = JSON.parse(this.schemaObject);
-          console.log('schemas:', this.schema);
-          console.log('schemasObject:', this.schemaObject);
         })
       )
       .subscribe();

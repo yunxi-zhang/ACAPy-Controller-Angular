@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AgentService } from 'src/app/services/agent.service';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -14,9 +13,7 @@ export class SchemaListComponent implements OnInit {
   issuerPublicDID: string;
   constructor(private agentService: AgentService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onSearch() {
     this.agentService.getCreatedSchemas(this.issuerPublicDID)

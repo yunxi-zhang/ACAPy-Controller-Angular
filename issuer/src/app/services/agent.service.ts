@@ -45,14 +45,6 @@ export class AgentService {
       );
   }
 
-  getConnections(): Observable<any[]> {
-    return this.http.get<any[]>('/connections')
-      .pipe(
-        switchMap((response: any) => of(response.results)),
-        catchError(this.handleError<any[]>('getConnections', []))
-      );
-  }
-
   getCreatedSchemas(issuerPublicDID: String): Observable<any[]> {
     return this.http.get<any[]>(`/schemas/created?schema_issuer_did=${issuerPublicDID}`)
       .pipe(
@@ -64,9 +56,16 @@ export class AgentService {
   getSchemas(schemaID: String): Observable<any[]> {
     return this.http.get<any[]>('/schemas/' + schemaID)
       .pipe(
-        tap(res => console.log('response in schema:', res)),
         switchMap((response: any) => of(response.schema)),
         catchError(this.handleError<any[]>('getSchemas', []))
+      );
+  }
+
+  getConnections(): Observable<any[]> {
+    return this.http.get<any[]>('/connections')
+      .pipe(
+        switchMap((response: any) => of(response.results)),
+        catchError(this.handleError<any[]>('getConnections', []))
       );
   }
 
@@ -81,8 +80,6 @@ export class AgentService {
         catchError(this.handleError<any>('removeConnection', null))
       );
   }
-
-  
 
   receiveInvitation(invitation: any): Observable<any> {
     return this.http.post<any>('/connections/receive-invitation', invitation)
