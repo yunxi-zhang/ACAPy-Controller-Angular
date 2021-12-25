@@ -7,10 +7,10 @@
                         <span>Search All Issuer's Created Schemas</span>
                     </small>
                 </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Issuer's Public DID"
-                        aria-label="Issuer's Schema ID" aria-describedby="basic-addon2" style="width: 20px;"
-                        [(ngModel)]="issuerPublicDID">
+                <div class="btn-group">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="issuerPublicDID">
+                        <option value="{{issuerPublicDID}}">{{issuerPublicDID}}</option>
+                    </select>
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" (click)="onSearch()"
                             class="btn btn-primary">Search</button>

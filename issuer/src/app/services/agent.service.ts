@@ -45,6 +45,14 @@ export class AgentService {
       );
   }
 
+  getPublicDID(): Observable<any[]> {
+    return this.http.get<any>('/wallet/did')
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('getPublicDID', []))
+      );
+  }
+
   getCreatedSchemas(issuerPublicDID: String): Observable<any[]> {
     return this.http.get<any[]>(`/schemas/created?schema_issuer_did=${issuerPublicDID}`)
       .pipe(
