@@ -11,6 +11,32 @@ export class AgentService {
 
   constructor(private http: HttpClient) { }
 
+  //Call POST APIs
+  createSchemas(payload: any): Observable<any> {
+    return this.http.post<any>('/schemas', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('createSchemas', null))
+      );
+  }
+
+  createInvitation(): Observable<any> {
+    return this.http.post<any>('/connections/create-invitation', {})
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('createInvitation', null))
+      );
+  }
+
+  createCredentialRequest(payload: any): Observable<any> {
+    return this.http.post<any>('/issue-credential-2.0/send-proposal', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('createCredentialRequest', null))
+      );
+  }
+
+  //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')
       .pipe(
@@ -56,21 +82,7 @@ export class AgentService {
       );
   }
 
-  createInvitation(): Observable<any> {
-    return this.http.post<any>('/connections/create-invitation', {})
-      .pipe(
-        switchMap((response: any) => of(response)),
-        catchError(this.handleError<any>('createInvitation', null))
-      );
-  }
-
-  createCredentialRequest(payload: any): Observable<any> {
-    return this.http.post<any>('/issue-credential-2.0/send-proposal', payload)
-      .pipe(
-        switchMap((response: any) => of(response)),
-        catchError(this.handleError<any>('createCredentialRequest', null))
-      );
-  }
+  
 
   receiveInvitation(invitation: any): Observable<any> {
     return this.http.post<any>('/connections/receive-invitation', invitation)
