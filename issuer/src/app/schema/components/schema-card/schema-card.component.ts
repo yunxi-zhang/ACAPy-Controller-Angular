@@ -16,7 +16,7 @@ export class SchemaCardComponent implements OnInit {
   }
 
   getSchemaDetail() {
-    this.agentService.getSchemas("MtSBSkitb28PSoCj9EpSDs:2:passport12:0.1")
+    this.agentService.getSchemas(this.schemaID)
       .pipe(
         map((schemaDetail: any) => {
           this.schemaDetail = schemaDetail;
