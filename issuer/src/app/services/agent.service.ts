@@ -20,6 +20,14 @@ export class AgentService {
       );
   }
 
+  createDefinition(payload: any): Observable<any> {
+    return this.http.post<any>('/credential-definitions', payload)
+    .pipe(
+      switchMap((response: any) => of(response)),
+      catchError(this.handleError<any>('createDefinitions', null))
+    );
+  }
+
   createInvitation(): Observable<any> {
     return this.http.post<any>('/connections/create-invitation', {})
       .pipe(

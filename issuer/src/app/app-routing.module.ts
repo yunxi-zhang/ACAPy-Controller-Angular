@@ -9,6 +9,10 @@ const routes: Routes = [
     loadChildren: () => import('./schema/schema.module').then(m => m.SchemaModule),
   },
   {
+    path: 'definitions',
+    loadChildren: () => import('./definition/definition.module').then(m => m.DefinitionModule),
+  },
+  {
     path: 'connections',
     loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionModule),
   },

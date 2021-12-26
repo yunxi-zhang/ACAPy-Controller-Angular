@@ -1,0 +1,70 @@
+<div class="container">
+    <form [formGroup]="definitionForm" novalidate autocomplete="false" (ngSubmit)="onSubmit()">
+        <div class="card shadow-sm" style="width: 40rem;">
+            <div class="card-body">
+                <div class="card-title">
+                    <small>
+                        <span>Please type in infomration for a new definition</span>
+                    </small>
+                </div>
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Schema ID:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="MtSBSkitb28PSoCj9EpSDs:2:passport18:0.1" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default" style="width: 22rem;" formControlName="schemaID">&nbsp;
+                    </span>
+                </div>
+                <br />
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Support Revocation:</small>&nbsp;
+                    </span>
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg example" style="width: 4rem;" formControlName="supportRevocation">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Revocation Registry Size:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="10000" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default" style="width: 7rem;" formControlName="revocationRegistrySize">
+                    </span>
+                </div>
+                <br />
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Tag:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="passport" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default" style="width: 7rem;" formControlName="tag">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">Create New Definition</button>
+    </form>
+    <div *ngIf="definition" class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label>A new credential definition is generated as shown below:</label>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <span>
+                                <small class="text-muted">Definition ID:</small>&nbsp;
+                            </span>
+                            <span>{{ definitionObject?.credential_definition_id }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
