@@ -10,6 +10,24 @@
                 <small class="text-muted">Definition ID:</small>&nbsp;
             </span>
             <span><a class="cursor-pointer" (click)="getDefinitionDetail()">{{ definitionID }}</a></span>
-        </div>  
+        </div>
+        <div class="card-text">
+            <span>
+                <small class="text-muted">Schema ID:</small>&nbsp;
+            </span>
+            <span>{{ definitionDetail?.schemaId }}</span>
+        </div>
+        <div class="card-text">
+            <span>
+                <small class="text-muted">Type:</small>&nbsp;
+            </span>
+            <span>{{ definitionDetail?.type }}</span>
+        </div>
+        <div class="card-text">
+            <span>
+                <small class="text-muted">Tag:</small>&nbsp;
+            </span>
+            <span>{{ definitionDetail?.tag }}</span>
+        </div>
     </div>
 </div>

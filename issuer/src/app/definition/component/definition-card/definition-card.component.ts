@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AgentService } from 'src/app/services/agent.service';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-definition-card',
@@ -7,11 +9,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DefinitionCardComponent implements OnInit {
   @Input() definitionID: any;
-  constructor() { }
+  definitionDetail: any;
+  constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
   }
 
-  getDefinitionDetail() {}
+  getDefinitionDetail() {
+    this.agentService.getDefinitions(this.definitionID)
+      .pipe(
+        map((definitionDetail: any) => {
+          this.definitionDetail = definitionDetail;
+        })
+      )
+      .subscribe()
+  }
 
 }
