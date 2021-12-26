@@ -65,7 +65,7 @@ export class AgentService {
     return this.http.get<any[]>(`/schemas/created?schema_issuer_did=${issuerPublicDID}`)
       .pipe(
         switchMap((response: any) => of(response)),
-        catchError(this.handleError<any[]>('getSchemas', []))
+        catchError(this.handleError<any[]>('getCreatedSchemas', []))
       );
   }
 
@@ -75,6 +75,14 @@ export class AgentService {
         switchMap((response: any) => of(response.schema)),
         catchError(this.handleError<any[]>('getSchemas', []))
       );
+  }
+
+  getCreatedDefinitions(issuerPublicDID: String): Observable<any[]> {
+    return this.http.get<any[]>(`/credential-definitions/created?issuer_did=${issuerPublicDID}`)
+    .pipe(
+      switchMap((response: any) => of(response)),
+      catchError(this.handleError<any[]>('getCreatedDefinitions', []))
+    );
   }
 
   getConnections(): Observable<any[]> {

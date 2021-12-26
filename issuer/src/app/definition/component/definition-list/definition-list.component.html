@@ -1,1 +1,34 @@
-<p>definition-list works!</p>
+<div class="card-columns">
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body" style="width: 25rem;">
+                <div class="card-title">
+                    <small>
+                        <span>Search Issuer's Created Schemas by a Pubilc DID</span>
+                    </small>
+                </div>
+                <div class="btn-group">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="issuerPublicDID">
+                        <option value="{{issuerPublicDID}}">{{issuerPublicDID}}</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" (click)="onSearch()"
+                            class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="container">
+        <h3><span class="badge badge-success">Search Result</span></h3>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="container">
+        <app-definition-card *ngFor="let definitionID of definitionIDs" [definitionID]="definitionID"></app-definition-card>
+        
+    </div>
+</div>
+<app-empty-list *ngIf="!definitionIDs?.length"></app-empty-list>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AgentService } from 'src/app/services/agent.service';
 import { filter, map } from 'rxjs/operators';
 
@@ -11,7 +10,7 @@ import { filter, map } from 'rxjs/operators';
 export class SchemaListComponent implements OnInit {
   schemaIDs: any[] = [];
   issuerPublicDID: string;
-  constructor(private agentService: AgentService, private route: ActivatedRoute) { }
+  constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
     this.agentService.getPublicDID()
