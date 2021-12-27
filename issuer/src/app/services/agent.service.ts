@@ -44,6 +44,14 @@ export class AgentService {
       );
   }
 
+  sendOffer(credExID: any, payload: any): Observable<any[]> {
+    return this.http.post<any[]>('/issue-credential-2.0/records/' + credExID + '/send-offer', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('sendOffer', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')
