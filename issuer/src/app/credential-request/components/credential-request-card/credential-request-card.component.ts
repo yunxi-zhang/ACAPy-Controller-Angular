@@ -28,11 +28,13 @@ export class CredentialRequestCardComponent implements OnInit {
   trace: any = false;
   list: any[];
   approval: string;
+  credentialRequestResult: string;
 
   constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
     this.approval = "not yet";
+    this.credentialRequestResult = "not started yet";
   }
 
   getBodyPayloadParameters() {
@@ -49,7 +51,6 @@ export class CredentialRequestCardComponent implements OnInit {
     try {
       this.getBodyPayloadParameters();
       this.payload = new SendOffer().updateBodyPayLoadTemplate(this.comment, this.connectionID, this.attributes, this.definitionID, this.issuerDID, this.schemaID, this.schemaIssuerDID, this.schemaName, this.schemaVersion, this.autoIssue, this.autoRemove, this.trace);
-      console.log('payload:', this.payload);
       this.agentService.sendOffer(this.credExID, this.payload)
         .pipe(
           filter((offer: any) => !!offer),
@@ -69,10 +70,32 @@ export class CredentialRequestCardComponent implements OnInit {
           },
           () => this.approval = "success"
         );
-    }catch (e) {
+    } catch (e) {
       console.log('Error:', e);
       this.approval = "failed";
     }
+  }
+
+  onSubmitCredentialRequest() {
+    this.agentService.sendRequest(this.credentialRequest.cred_ex_record.cred_ex_id)
+      .pipe(
+        filter((offer: any) => !!offer),
+        map((offer: any) => {
+          this.offer = offer;
+          this.offerObject = this.offer && JSON.stringify(this.offer, null, 4) || '';
+          this.offerObject = JSON.parse(this.offerObject);
+        })
+      )
+      .subscribe(
+        res => {
+          console.log('response:', res);
+        },
+        err => {
+          console.log('error:', err);
+          this.credentialRequestResult = "failed";
+        },
+        () => this.credentialRequestResult = "success"
+      );
   }
 
 }
