@@ -24,13 +24,15 @@ export class CredentialRequestCardComponent implements OnInit {
   schemaName: any;
   schemaVersion: any;
   autoIssue: any = false;
-  autoRemove: any = true; 
+  autoRemove: any = true;
   trace: any = false;
   list: any[];
+  approval: string;
 
   constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
+    this.approval = "not yet";
   }
 
   getBodyPayloadParameters() {
@@ -44,18 +46,33 @@ export class CredentialRequestCardComponent implements OnInit {
   }
 
   onSubmit() {
-    this.getBodyPayloadParameters();
-    this.payload = new SendOffer().updateBodyPayLoadTemplate(this.comment, this.connectionID, this.attributes, this.definitionID, this.issuerDID, this.schemaID, this.schemaIssuerDID, this.schemaName, this.schemaVersion, this.autoIssue, this.autoRemove, this.trace);
-    this.agentService.sendOffer(this.credExID, this.payload)
-    .pipe(
-      filter((offer: any) => !!offer),
-      map((offer: any) => {
-        this.offer = offer;
-        this.offerObject = this.offer && JSON.stringify(this.offer, null, 4) || '';
-        this.offerObject = JSON.parse(this.offerObject);
-      })
-    )
-    .subscribe();
+    try {
+      this.getBodyPayloadParameters();
+      this.payload = new SendOffer().updateBodyPayLoadTemplate(this.comment, this.connectionID, this.attributes, this.definitionID, this.issuerDID, this.schemaID, this.schemaIssuerDID, this.schemaName, this.schemaVersion, this.autoIssue, this.autoRemove, this.trace);
+      console.log('payload:', this.payload);
+      this.agentService.sendOffer(this.credExID, this.payload)
+        .pipe(
+          filter((offer: any) => !!offer),
+          map((offer: any) => {
+            this.offer = offer;
+            this.offerObject = this.offer && JSON.stringify(this.offer, null, 4) || '';
+            this.offerObject = JSON.parse(this.offerObject);
+          })
+        )
+        .subscribe(
+          res => {
+            console.log('response:', res);
+          },
+          err => {
+            console.log('error:', err);
+            this.approval = "failed";
+          },
+          () => this.approval = "success"
+        );
+    }catch (e) {
+      console.log('Error:', e);
+      this.approval = "failed";
+    }
   }
 
 }
