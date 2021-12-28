@@ -68,6 +68,14 @@ export class AgentService {
       );
   }
 
+  storeCredential(credExID: any): Observable<any> {
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/store', '{}')
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('storeCredential', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')
