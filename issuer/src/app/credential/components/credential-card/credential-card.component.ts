@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AgentService } from 'src/app/services/agent.service';
+import { map, filter, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-credential-card',
@@ -7,10 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CredentialCardComponent implements OnInit {
   @Input() credential: any;
+  @Input() credExRecord: any;
 
-  constructor() { }
+
+  constructor(private agentService: AgentService) { }
 
   ngOnInit() {
+    
   }
 
 }
