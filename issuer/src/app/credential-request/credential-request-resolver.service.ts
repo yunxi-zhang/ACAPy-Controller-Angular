@@ -20,7 +20,7 @@ export class CredentialRequestResolverService implements Resolve<any[]> {
       .pipe(
         map((records: any[]) => {
           if (route.routeConfig.path === 'requested') {
-            return records.filter((record: any) => record.cred_ex_record.state === 'proposal-sent' || record.cred_ex_record.state === 'offer-sent');
+            return records.filter((record: any) => record.cred_ex_record.state === 'proposal-sent' || record.cred_ex_record.state === 'offer-sent' || record.cred_ex_record.state === 'request-sent');
           } else if (route.routeConfig.path === 'received'){
             return records.filter((record: any) => record.cred_ex_record.state === 'proposal-received' || record.cred_ex_record.state === 'offer-received' || record.cred_ex_record.state === 'request-received');
           }
