@@ -52,6 +52,22 @@ export class AgentService {
       );
   }
 
+  sendRequest(credExID): Observable<any> {
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/send-request', null)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('sendRequest', null))
+      );
+  }
+
+  issueCredential(credExID: any, payload: any): Observable<any> {
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/issue', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('issueCredential', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')
