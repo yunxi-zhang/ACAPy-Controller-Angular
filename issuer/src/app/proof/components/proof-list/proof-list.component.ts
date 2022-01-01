@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AgentService } from 'src/app/services/agent.service';
-
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-proof-list',
@@ -12,12 +11,12 @@ import { map } from 'rxjs/operators';
 export class ProofListComponent implements OnInit {
   proofs: any[] = [];
 
-  constructor(private agentService: AgentService) { }
+  constructor(private agentService: AgentService,  private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.agentService.getProofs()
+    this.route.data
       .pipe(
-        map((proofs: any[]) => this.proofs = proofs)
+        map((data) => this.proofs = data.ProofResolverService || []),
       )
       .subscribe();
   }

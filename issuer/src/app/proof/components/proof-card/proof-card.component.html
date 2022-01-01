@@ -20,24 +20,44 @@
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Requested Attributes:&nbsp;</small>
-                <p *ngFor="let attr of proof?.presentation_request?.requested_attributes?.additionalProp1 | keyvalue">
-                    <span>{{ attr.key }}:{{ attr.value}}</span>
-                </p>
+                <small class="text-muted">Connection ID:&nbsp;</small>
+                <p>{{ proof?.connection_id }}</p>
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">State:&nbsp;</small>
+                <p>{{ proof?.state }}</p>
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">My Role:&nbsp;</small>
+                <p>{{ proof?.role }}</p>
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">Comment:&nbsp;</small>
+                <p>{{ proof?.presentation_request_dict?.comment }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
                 <small class="text-muted">Requested Attributes:&nbsp;</small>
-                <p *ngFor="let attr of proof?.presentation_request?.requested_predicates?.additionalProp2 | keyvalue">
-                    <span>{{ attr.value}}</span>
-                </p>
+                <p>{{ attributeKey }}: {{ attributeValue?.name }}
+            </div>
+        </div>
+        <div class="card-text">
+            <div>
+                <small class="text-muted">Requested Predicates:&nbsp;</small>
+                <p>{{ predicateKey }}: {{ predicateValue?.name }}  {{ predicateValue?.p_type }}  {{ predicateValue?.p_value }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
                 <small class="text-muted">Not Expired Until:&nbsp;</small>
-                <p>{{ proof?.presentation_request?.non_revoked?.to }}</p>
+                <p>{{ proofValidUntil }}</p>
             </div>
         </div>
     </div>
