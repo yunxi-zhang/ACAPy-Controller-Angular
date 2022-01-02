@@ -9,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProofCardComponent implements OnInit {
   @Input() proof: any;
   proofValidUntil: any;
-  attributeKey: any;
-  attributeValue: any;
-  predicateKey: any;
-  predicateValue: any;
+  attributeKeys: any;
+  attributeValues: any;
+  predicateKeys: any;
+  predicateValues: any;
 
   constructor() { }
 
@@ -22,18 +22,18 @@ export class ProofCardComponent implements OnInit {
 
   covertEpochToLocalDate(epoch) {
     this.proofValidUntil = new Date(epoch*1000);
-    this.getPredicates();
     this.getAttributes();
-  }
-
-  getPredicates() {
-    this.predicateKey = Object.keys(this.proof.presentation_request.requested_predicates);
-    this.predicateValue = Object.values(this.proof.presentation_request.requested_predicates)[0];
+    this.getPredicates();
   }
 
   getAttributes() {
-    this.attributeKey = Object.keys(this.proof.presentation_request.requested_attributes);
-    this.attributeValue = Object.values(this.proof.presentation_request.requested_attributes)[0];
+    this.attributeKeys = Object.keys(this.proof.presentation_request.requested_attributes);
+    this.attributeValues = Object.values(this.proof.presentation_request.requested_attributes);
+  }
+
+  getPredicates() {
+    this.predicateKeys = Object.keys(this.proof.presentation_request.requested_predicates);
+    this.predicateValues = Object.values(this.proof.presentation_request.requested_predicates);
   }
 
 }

@@ -45,13 +45,17 @@
         <div class="card-text">
             <div>
                 <small class="text-muted">Requested Attributes:&nbsp;</small>
-                <p>{{ attributeKey }}: {{ attributeValue?.name }}
+                <p *ngFor="let key of attributeKeys; let i = index">
+                    {{ attributeKeys[i] }}: {{ attributeValues[i]?.name }}
+                </p>
             </div>
         </div>
         <div class="card-text">
             <div>
                 <small class="text-muted">Requested Predicates:&nbsp;</small>
-                <p>{{ predicateKey }}: {{ predicateValue?.name }}  {{ predicateValue?.p_type }}  {{ predicateValue?.p_value }}</p>
+                <p *ngFor="let key of predicateKeys; let i = index">
+                    {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }}  {{ predicateValues[i]?.p_type }}  {{ predicateValues[i]?.p_value }}
+                </p>
             </div>
         </div>
         <div class="card-text">
