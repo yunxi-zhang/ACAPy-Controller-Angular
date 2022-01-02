@@ -1,0 +1,159 @@
+<div class="container">
+    <form [formGroup]="proofForm" novalidate autocomplete="false" (ngSubmit)="onSubmit()">
+        <div class="card shadow-sm" style="width: 40rem;">
+            <div class="card-body" style="width: 25rem;">
+                <div class="card-title">
+                    <span>Create a new proof</span>
+                </div>
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Connection ID:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="8794e8b4-ac9c-4043-9dd6-d3fd83fa6cb2"
+                            aria-label="Default" aria-describedby="inputGroup-sizing-default" style="width: 22rem;"
+                            formControlName="connectionID">&nbsp;
+                    </span>
+                </div>
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Comment:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="Put your comment here" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default" style="width: 22rem;"
+                            formControlName="comment">&nbsp;
+                    </span>
+                </div>
+                <div class="form-inline">
+                    <span>
+                        <small class="text-muted">Request Name:</small>&nbsp;
+                    </span>
+                    <span>
+                        <input type="text" class="form-control" placeholder="A request name" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default" style="width: 22rem;"
+                            formControlName="requestName">&nbsp;
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <span>Requested Attribute Names</span>
+                    </div>
+                    <div class="card-text">
+                        <div formArrayName="attributes">
+                            <div *ngFor="let attribute of attributes.controls; let i = index">
+                                <span>
+                                    <small class="text-muted">Attribute Name {{ i + 1 }}:</small>&nbsp;
+                                </span>
+                                <span>
+                                    <div class="input-group mb-3">
+                                        <input id="attribute-{{i}}" type="text" class="form-control"
+                                            placeholder="firstName" aria-label="Default"
+                                            aria-describedby="button-addon2" style="width: 21rem;"
+                                            [formControlName]="i" />
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-info" (click)="addAttribute()">Add another
+                                    attribute +</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <span>Requested Predicates</span>
+                    </div>
+                    <div class="card-text">
+                        <div formArrayName="predicates">
+                            <div *ngFor="let predicate of predicates.controls; let i = index">
+                                <span>
+                                    <small class="text-muted">Predicate {{ i + 1 }}:</small>&nbsp;
+                                </span>
+                                <span>
+                                    <div class="input-group mb-3">
+                                        <input id="predicate-{{i}}" type="text" class="form-control"
+                                            placeholder="firstName" aria-label="Default"
+                                            aria-describedby="button-addon2" style="width: 21rem;"
+                                            [formControlName]="i" />
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-info" (click)="addPredicate()">Add another
+                                    predicate +</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">Create New
+            Proof</button>
+    </form>
+    <div *ngIf="proofRequest" class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label>A new proof request is generated as shown below:</label>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Presentation Exchange ID:&nbsp;</small>
+                                <p>{{ proofRequest?.presentation_exchange_id }}</p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Connection ID:&nbsp;</small>
+                                <p>{{ proofRequest?.connection_id }}</p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">State:&nbsp;</small>
+                                <p>{{ proofRequest?.state }}</p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">My Role:&nbsp;</small>
+                                <p>{{ proofRequest?.role }}</p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Comment:&nbsp;</small>
+                                <p>{{ proofRequest?.presentation_request_dict?.comment }}</p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Requested Attributes:&nbsp;</small>
+                                <p *ngFor="let key of attributeKeys; let i = index">
+                                    {{ attributeKeys[i] }}: {{ attributeValues[i]?.name }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Requested Predicates:&nbsp;</small>
+                                <p *ngFor="let key of predicateKeys; let i = index">
+                                    {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }} {{ predicateValues[i]?.p_type
+                                    }} {{ predicateValues[i]?.p_value }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <small class="text-muted">Not Expired Until:&nbsp;</small>
+                                <p>{{ proofValidUntil }}</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
