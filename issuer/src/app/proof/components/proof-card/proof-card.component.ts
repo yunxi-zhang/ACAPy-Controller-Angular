@@ -18,12 +18,12 @@ export class ProofCardComponent implements OnInit {
 
   ngOnInit() {
     this.covertEpochToLocalDate(this.proof.presentation_request.non_revoked.to);
+    this.getAttributes();
+    this.getPredicates();
   }
 
   covertEpochToLocalDate(epoch) {
     this.proofValidUntil = new Date(epoch*1000);
-    this.getAttributes();
-    this.getPredicates();
   }
 
   getAttributes() {
