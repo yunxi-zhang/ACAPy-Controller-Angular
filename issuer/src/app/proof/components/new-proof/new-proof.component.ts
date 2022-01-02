@@ -29,24 +29,7 @@ export class NewProofComponent implements OnInit {
   connectionID: any;
   requestName: any;
   requestedAttributes: any = {};
-  requestedPredicates: any = {
-    "predProp1": {
-      "name": "age",
-      "p_type": ">=",
-      "p_value": 12,
-      "restrictions": [
-        {}
-      ]
-    },
-    "predProp2": {
-      "name": "age",
-      "p_type": ">",
-      "p_value": 28,
-      "restrictions": [
-        {}
-      ]
-    }
-  };
+  requestedPredicates: any = {};
   nonRevoked: any;
   proofRequest: any;
   proofRequestResult = 'not started yet';
@@ -59,6 +42,7 @@ export class NewProofComponent implements OnInit {
   predicateValues: any;
 
   attribute: any;
+  predicate: any;
 
   constructor(private fb: FormBuilder, private agentService: AgentService) { }
 
@@ -79,6 +63,7 @@ export class NewProofComponent implements OnInit {
     this.connectionID = this.proofForm.value.connectionID;
     this.requestName = this.proofForm.value.requestName;
     this.constructAttributes(this.proofForm.value.attributes);
+    this.constructPredicates(this.proofForm.value.predicates);
   }
 
   onSubmit() {
@@ -141,6 +126,17 @@ export class NewProofComponent implements OnInit {
         "name": attributes[i]
       };
       this.requestedAttributes['attrProp' + (i + 1)] = this.attribute; 
+    }
+  }
+
+  constructPredicates(predicates) {
+    for (let i = 0; i < predicates.length; i++) {
+      this.predicate = {
+        "name": predicates[i].split(" ")[0],
+        "p_type": predicates[i].split(" ")[1],
+        "p_value": parseInt(predicates[i].split(" ")[2])
+      }
+      this.requestedPredicates['predProp' + (i + 1)] = this.predicate;
     }
   }
 }

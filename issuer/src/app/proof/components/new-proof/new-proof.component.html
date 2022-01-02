@@ -71,14 +71,15 @@
                                 <span>
                                     <small class="text-muted">Predicate {{ i + 1 }}:</small>&nbsp;
                                 </span>
-                                <span>
+                                <span class="badge badge-warning">MUST have a space in between (e.g. DOB SPACE &lt;= SPACE 2000)
                                     <div class="input-group mb-3">
                                         <input id="predicate-{{i}}" type="text" class="form-control"
-                                            placeholder="firstName" aria-label="Default"
+                                            placeholder="DoB &lt;= 2000" aria-label="Default"
                                             aria-describedby="button-addon2" style="width: 21rem;"
                                             [formControlName]="i" />
                                     </div>
                                 </span>
+                                
                             </div>
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-info" (click)="addPredicate()">Add another
