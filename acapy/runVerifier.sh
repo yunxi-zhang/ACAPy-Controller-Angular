@@ -1,7 +1,7 @@
 #!/bin/bash
 docker rm verifier
 
-docker run -p 9001:9001  --name verifier --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \
+docker run -p 9001:9001  --name verifier --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-1_0.7.2 start \
 -l Verifier \
 -it http 0.0.0.0 9000 \
 -ot http \
