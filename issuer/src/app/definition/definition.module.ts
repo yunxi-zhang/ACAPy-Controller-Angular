@@ -7,7 +7,8 @@ import { DefinitionComponent } from './component/definition/definition.component
 import { DefinitionListComponent } from './component/definition-list/definition-list.component';
 import { DefinitionCardComponent } from './component/definition-card/definition-card.component';
 import { NewDefinitionComponent } from './component/new-definition/new-definition.component';
-
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import { NewDefinitionComponent } from './component/new-definition/new-definitio
     ReactiveFormsModule,
     SharedModule,
     DefinitionRoutingModule,
+    MatProgressSpinnerModule,
+    MatButtonModule
   ]
 })
 export class DefinitionModule { }
