@@ -84,6 +84,14 @@ export class AgentService {
       );
   }
 
+  sendProofPresentation(presentationExchangeID: any, payload: any): Observable<any> {
+    return this.http.post<any>('/present-proof/send-request/' + presentationExchangeID + '/send-presentation', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('sendProofPresentation', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')
