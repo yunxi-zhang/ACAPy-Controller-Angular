@@ -26,11 +26,7 @@ export class NewCredentialRequest {
             "attributes": []
         },
         "filter": {
-            "dif": {
-                "some_dif_criterion": "string"
-            },
-            "indy": {
-            }
+            "indy": {}
         },
         "trace": false
     };
