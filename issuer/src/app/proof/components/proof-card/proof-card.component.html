@@ -89,6 +89,10 @@
             <button type="button" class="btn btn-primary" (click)="onSubmitPresentation()" style="width: 11rem;">Submit
                 Proof</button>
         </ng-container>
+        <ng-container *ngIf="proof?.state === 'presentation_received'">
+            <button type="button" class="btn btn-primary" (click)="onSubmitProofVerification()" style="width: 11rem;">Verify
+                Proof</button>
+        </ng-container>
     </div>
     <div class="card-footer">
         <p class="card-text">

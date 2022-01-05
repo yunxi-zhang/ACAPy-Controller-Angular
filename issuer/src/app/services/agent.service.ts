@@ -92,6 +92,14 @@ export class AgentService {
       );
   }
 
+  verifyProofpresentation(presentationExchangeID: any): Observable<any> {
+    return this.http.post<any>('/present-proof/records/' + presentationExchangeID + '/verify-presentation', null)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('verifyProofpresentation', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')

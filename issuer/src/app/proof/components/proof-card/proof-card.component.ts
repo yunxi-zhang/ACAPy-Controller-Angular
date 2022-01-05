@@ -22,6 +22,7 @@ export class ProofCardComponent implements OnInit {
   //this variable stores the credential ID selected by a holder user in the Web UI to fulfil predicate requirements of a proof request
   predCredential: any;
   presentationResult = "not yet started";
+  proofVerificationResult = "not yet started";
 
   payload: any;
 
@@ -77,10 +78,28 @@ export class ProofCardComponent implements OnInit {
           this.presentationResult = "success";
         });
   }
-  
+
+  onSubmitProofVerification() {
+    this.agentService.verifyProofpresentation(this.proof.presentation_exchange_id)
+      .pipe(
+        
+      )
+      .subscribe(
+        res => {
+          console.log('Response in onSubmitProofVerification:', res);
+        },
+        err => {
+          console.log('Error in onSubmitProofVerification', err);
+          this.proofVerificationResult = "failed";
+        },
+        () => {
+          this.proofVerificationResult = "success";
+        });
+  }
+
   constructAttributeObject(credentialID) {
     for (let i = 0; i < this.attributeKeys.length; i++) {
-      this.attributeObject[this.attributeKeys[i]]= {
+      this.attributeObject[this.attributeKeys[i]] = {
         "cred_id": credentialID,
         "revealed": true
       }

@@ -20,9 +20,9 @@ export class ProofResolverService implements Resolve<any[]> {
       .pipe(
         map((proofReqs: any[]) => {
           if (route.routeConfig.path === 'received') {
-            return proofReqs.filter((proofReq: any) => proofReq.state === 'request_received' || proofReq.state === 'presentation_received');
+            return proofReqs.filter((proofReq: any) => proofReq.state === 'request_received' || proofReq.state === 'presentation_received' || proofReq.state ==='verified');
           } else if (route.routeConfig.path === 'requested') {
-            return proofReqs.filter((proofReq: any) => proofReq.state === 'request_sent' || proofReq.state === 'presentation_sent');
+            return proofReqs.filter((proofReq: any) => proofReq.state === 'request_sent' || proofReq.state === 'presentation_sent' || proofReq.state === 'presentation_acked');
           }
         })
       );
