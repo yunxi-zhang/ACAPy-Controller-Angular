@@ -3,8 +3,8 @@
         <div class="card-title">
             <h5>
                 <span>{{ proof?.presentation_request?.name }}</span>
-                <span
-                    *ngIf="proof?.presentation_request?.version">&nbsp;({{ proof?.presentation_request?.version }})</span>
+                <span *ngIf="proof?.presentation_request?.version">&nbsp;({{ proof?.presentation_request?.version
+                    }})</span>
             </h5>
             <small>
                 <span *ngIf="proof?.initiator === 'self'">Sent&nbsp;</span>
@@ -48,14 +48,35 @@
                 <p *ngFor="let key of attributeKeys; let i = index">
                     {{ attributeKeys[i] }}: {{ attributeValues[i]?.name }}
                 </p>
+                <ng-container *ngIf="proof?.state === 'request_received'">
+                    <div>
+                        <small>Choose a credential that have the requsted attributes:&nbsp;</small>
+                    </div>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="credential">
+                        <ng-container *ngFor="let credential of credentials;">
+                            <option value="{{credential?.referent}}">{{ credential?.referent }}</option>
+                        </ng-container>
+                    </select>
+                </ng-container>
             </div>
         </div>
         <div class="card-text">
             <div>
                 <small class="text-muted">Requested Predicates:&nbsp;</small>
                 <p *ngFor="let key of predicateKeys; let i = index">
-                    {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }}  {{ predicateValues[i]?.p_type }}  {{ predicateValues[i]?.p_value }}
+                    {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }} {{ predicateValues[i]?.p_type }} {{
+                    predicateValues[i]?.p_value }}
                 </p>
+                <ng-container *ngIf="proof?.state === 'request_received'">
+                    <div>
+                        <small>Choose a credential that fulfils the predicates:&nbsp;</small>
+                    </div>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="predCredential">
+                        <ng-container *ngFor="let predCredential of credentials;">
+                            <option value="{{predCredential?.referent}}">{{ predCredential?.referent }}</option>
+                        </ng-container>
+                    </select>
+                </ng-container>
             </div>
         </div>
         <div class="card-text">
@@ -64,6 +85,10 @@
                 <p>{{ proofValidUntil }}</p>
             </div>
         </div>
+        <ng-container *ngIf="proof?.state === 'request_received'">
+            <button type="button" class="btn btn-primary" (click)="onSubmitPresentation()" style="width: 11rem;">Submit
+                Proof</button>
+        </ng-container>
     </div>
     <div class="card-footer">
         <p class="card-text">
