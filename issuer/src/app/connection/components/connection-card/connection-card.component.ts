@@ -14,8 +14,4 @@ export class ConnectionCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeConnection(connection: any) {
-    this.remove.emit(connection);
-  }
-
 }

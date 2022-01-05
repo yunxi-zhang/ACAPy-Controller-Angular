@@ -1,8 +1,5 @@
 <div class="card shadow-sm">
     <div class="card-body">
-        <button type="button" class="close" aria-label="Close" (click)="removeConnection(connection)">
-            <span aria-hidden="true">&times;</span>
-        </button>
         <ng-container *ngIf="connection?.state === 'active';else invitation">
             <div class="card-title">
                 <small>
