@@ -1,7 +1,7 @@
 #!/bin/bash
 docker rm issuer
 
-docker run -p 7001:7001  --name issuer --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-1_0.7.2 start \
+docker run -p 7001:7001  --name issuer --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \
 -l Issuer \
 -it http 0.0.0.0 7000 \
 -ot http \

@@ -1,7 +1,7 @@
 #!/bin/bash
 docker rm holder
 
-docker run -p 8001:8001  --name holder --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-1_0.7.2 start \
+docker run -p 8001:8001  --name holder --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \
 -l Holder \
 -it http 0.0.0.0 8000 \
 -ot http \
