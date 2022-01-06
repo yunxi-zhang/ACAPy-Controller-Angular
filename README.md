@@ -20,6 +20,13 @@ Currently, this repo is only tested against ACA-Py V0.6.0 for a simple happy pat
 
 There're issues of using this frontend app when it's tested against ACA-Py V0.7.0 and above, and it will fail when a holder user sends a proof presentation. 
 
+## Repo Structure
+|__ acapy: This folder contains all shell scripts to set up 3 ACA-Py agents with version 0.6.0.
+|__ agent-specifc: This folder contains some frontend pages customised for an holder and a verifier.
+|__ agent: This folder contains all the frontend app files.
+|__ common.sh: This shell script defines the styling of information printed out. It is used by other shell script files.
+|__ setup-agent.sh: This shell script will auto create 3 frontend apps for an issuer, a holder and a verifier respectively.
+
 ## Run the ACA-Py Agents in Azure VMs
 Please follow [my blog series](https://yunxi-zhang-75627.medium.com/hyperledger-aries-aca-py-agents-setup-and-running-tutorials-part-i-hyperledger-indy-project-249591521e92) on how to set up ACA-Py agents in Azure.
 
