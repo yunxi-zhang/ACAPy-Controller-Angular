@@ -12,11 +12,12 @@ This repo is mainly used to run as a frontend controller app that connects to a 
 Currently, this repo is only tested against ACA-Py <b>V0.6.0</b> for a simple happy path. This includes: 
 1. An issuer user can create/view a new credential schema/definition. 
 2. Connections can be established between any 2 of 3 agents. 
-3. A holder user can request a credential by starting with a credential request step. 
+3. A holder user can request a credential by starting with a credential request. 
 4. An issuer user can approve and issue a credential. 
 5. An holder user can store an issued credential to his/her wallet.
 6. A verifier user can request a proof request. 
-7. An holder user can choose credentials to give a proof presentation and (8) A verifier user can verify a proof. <br>
+7. An holder user can choose credentials to give a proof presentation.
+8. A verifier user can verify a proof.
 
 There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation. 
 
