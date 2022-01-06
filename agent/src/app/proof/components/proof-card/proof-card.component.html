@@ -99,6 +99,13 @@
         <ng-container *ngIf="proof?.state === 'presentation_received'">
             <button type="button" class="btn btn-primary" (click)="onSubmitProofVerification()"
                 style="width: 11rem;">Verify Proof</button>
+                <br />
+            <ng-container *ngIf="proofVerificationResult === 'success'">
+                <span class="badge badge-success">Proof verificiation is successful</span>
+            </ng-container>
+            <ng-container *ngIf="proofVerificationResult === 'failed'">
+                <span class="badge badge-danger">Proof verification is failed</span>
+            </ng-container>
         </ng-container>
     </div>
     <div class="card-footer">
