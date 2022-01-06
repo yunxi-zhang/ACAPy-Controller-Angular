@@ -8,6 +8,9 @@ This repo is mainly used to run as a frontend controller app that connects to a 
 4. Docker Version: 20.10.8, build 3967b7d. Docker is optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 5. Docker Compose Version: 1.29.2, build 5becea4c. Docker is also optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 
+## ACA-Py Compatible Version
+Currently, this repo is only tested against ACA-Py V0.6.0 for a simple happy path. It's been tested against V0.7.2, and it will fail when a holder user sends a proof presentation. 
+
 ## Run the ACA-Py Agents in Azure VMs
 Please follow [my blog series](https://yunxi-zhang-75627.medium.com/hyperledger-aries-aca-py-agents-setup-and-running-tutorials-part-i-hyperledger-indy-project-249591521e92) on how to set up ACA-Py agents in Azure.
 
@@ -43,7 +46,9 @@ cd ./acapy
 ./runVerifier.sh
 ```
 
-### Approach 2 - Run a docker compose file to have 3 agents to run in the same terminal window
+As the issuer agent connects to Sovrin's BuilderNet, for the first time connection, it requires a manual interaction to approve Transaction Author Agreement (TAA). A user only needs to press the "Enter" key to choose the default option as all these options proivision the same functionalities from a technical perspective. 
+
+### Approach 2 - Run a docker compose file to have 3 agents to run in the same terminal window (as no ledger is configured in the docker compose file, only for the purpose of testing agent-level interaction)
 By default, the 3 agents are not connecting to any Indy DLT networks. This approach is only used for testing the inter communication between agents only. 
 1. Move to the right folder
 ```
@@ -63,15 +68,9 @@ Run the command to set up a indy tails server.
 ```
 
 ## Run the Frontend App
-1. Move to the right folder
+The agent folder contains all the files used for a forntend app. It is used as a template folder to set up all 3 frontend apps for issuer, holder and verifier respectively. A shell script file named "setup-agent.sh" is provioned to auto set up 3 frontend apps. For windows users, one has to either manually follow the commands or create a bat file unfortunately.
+1. Run setup-agent.sh
 ```
-cd ./issuer
-```
-2. Run the command to install all dependencies
-```
-npm install
-```
-3. Run the command to run this app
-```
-npm start
+./setup-agent.sh
+
 ```
