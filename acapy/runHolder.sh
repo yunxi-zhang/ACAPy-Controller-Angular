@@ -1,4 +1,5 @@
 #!/bin/bash
+docker stop holder
 docker rm holder
 
 docker run -p 8001:8001  --name holder --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \

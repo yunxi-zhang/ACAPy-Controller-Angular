@@ -1,4 +1,5 @@
 #!/bin/bash
+docker stop issuer
 docker rm issuer
 
 docker run -p 7001:7001  --name issuer --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \

@@ -1,4 +1,5 @@
 #!/bin/bash
+docker stop verifier
 docker rm verifier
 
 docker run -p 9001:9001  --name verifier --network=bridge -it bcgovimages/aries-cloudagent:py36-1.16-0_0.6.0 start \
