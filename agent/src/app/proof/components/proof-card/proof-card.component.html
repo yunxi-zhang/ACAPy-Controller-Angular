@@ -88,10 +88,17 @@
         <ng-container *ngIf="proof?.state === 'request_received'">
             <button type="button" class="btn btn-primary" (click)="onSubmitPresentation()" style="width: 11rem;">Submit
                 Proof</button>
+            <br />
+            <ng-container *ngIf="presentationResult === 'success'">
+                <span class="badge badge-success">Proof presentation is successful</span>
+            </ng-container>
+            <ng-container *ngIf="presentationResult === 'failed'">
+                <span class="badge badge-danger">Proof presentation is failed</span>
+            </ng-container>
         </ng-container>
         <ng-container *ngIf="proof?.state === 'presentation_received'">
-            <button type="button" class="btn btn-primary" (click)="onSubmitProofVerification()" style="width: 11rem;">Verify
-                Proof</button>
+            <button type="button" class="btn btn-primary" (click)="onSubmitProofVerification()"
+                style="width: 11rem;">Verify Proof</button>
         </ng-container>
     </div>
     <div class="card-footer">
