@@ -77,9 +77,15 @@ Run the command to set up a indy tails server.
 ```
 
 ## Run the Frontend App
-The agent folder contains all the files used for a forntend app. It is used as a template folder to set up all 3 frontend apps for issuer, holder and verifier respectively. A shell script file named "setup-agent.sh" is provioned to auto set up 3 frontend apps. For windows users, one has to either manually follow the commands or create a bat file unfortunately.
+The agent folder contains all the files used for a forntend app. It is used as a template folder to set up all 3 frontend apps for issuer, holder and verifier respectively. A shell script file named "setup-agent.sh" is provioned to auto set up 3 frontend apps. For windows users, one has to either manually follow the commands or create a bat file unfortunately. The 3 frontend apps have been configured to auto open a new browser to show each Web UI when it's ready, which normally takes around 1 minute.
 1. Run setup-agent.sh
 ```
 ./setup-agent.sh
 
 ```
+Below shows the port numbers used for each frontend app.
+| Frontend App | Frontend Port |  
+| ----------- | ----------- | 
+| Issuer |  4000 |
+| Holder | 4001 |
+| Verifier | 4002 |
