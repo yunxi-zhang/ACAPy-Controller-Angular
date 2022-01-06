@@ -3,8 +3,8 @@ This repo is mainly used to run as a frontend controller app that connects to a 
 
 ## Prerequisites
 1. OS: MacOS 11.6.1 (properly tested) or Unix/Linux(not properly tested yet).
-2. node version: 14.18.1.
-3. angular version: 12.2.13.
+2. Node version: 14.18.1.
+3. Angular version: 12.2.13.
 4. Docker Version: 20.10.8, build 3967b7d. Docker is optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 5. Docker Compose Version: 1.29.2, build 5becea4c. Docker is also optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 
