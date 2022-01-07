@@ -91,12 +91,44 @@ Below shows the port numbers used for each frontend app.
 | Verifier | 4002 |
 
 ## User Gudiance
-Currently, this repo is only tested against ACA-Py <b>V0.6.0</b> for a simple happy path. This includes: 
-1. An issuer user can create/view a new credential schema/definition. 
-2. Connections can be established between any 2 of 3 agents. 
-3. A holder user can request a credential by starting with a credential request. 
-4. An issuer user can approve and issue a credential. 
-5. An holder user can store an issued credential to his/her wallet.
-6. A verifier user can request a proof request. 
-7. An holder user can choose credentials to give a proof presentation.
-8. A verifier user can verify a proof.
+Currently, this repo can only support a simple happy path for using ACA-Py <b>V0.6.0</b>. This includes: 
+1. A Landing page  that shows 6 options to a user. Not all functions can be used for all the users. For instance, schemas and definitions can only be used for an issuer user where a public DID is provisioned to the issuer agent. Since this repo is used for demo purpose, functions catering for a specific agent user is not implemented yet.
+![Landing Page](./images/landing-page.png)
+2. An issuer user can create a new credential schema. 
+![Create Schema Page](./images/create-schema.png)
+3. An issuer user can then view the newly created credential schema. 
+![View Schema Page](./images/view-schema.png)
+4. An issuer user can create a new definition based on the schema.
+![Create Definition Page](./images/create-definition.png)
+5. An issuer user can view the newly created definition.
+![View Definition Page](./images/view-definition.png)
+6. An holder user can establish a new connection with the issuer user.
+![New Connection Page](./images/new-connection.png)
+7. The issuer user accept the connection invitation by copying the invite JSON from the holder user and paste it in.
+![Accept Connection Page](./images/accept-connection.png)
+8. The issuer/holder user can view the established connection.
+![View Connection Page](./images/view-connection.png)
+9. The holder user can send a new credential request.
+![Request Credential Page Part 1](./images/request-credential-proposal-part1.png)
+![Request Credential Page Part 2](./images/request-credential-proposal-part2.png)
+10. The holder user can view the newly credential request known as a credential proposal.
+![View Credential Proposal](./images/view-credential-proposal.png)
+11. The issuer user can approve the credential proposal by mapping the request to a specific schema and definition.
+![Approve Credential Proposal](./images/approve-credential-proposal.png)
+12. The holder user can now request a formal credential request.
+![Request Credential](./images/request-credential.png)
+13. The issuer user can now offically issue a formal credential.
+![Issue Credential](./images/issue-credential.png)
+14. The holder user can store the issued credential to a wallet.
+![Store Credential to Wallet](./images/store-credential-to-wallet.png)
+15. The holder user can view the credential in the wallet by refreshing the page. The credential now has its own ID.
+![View Credential](./images/view-credential.png)
+16. A verifier user can request a proof request. 
+![View Credential](./images/request-proof-part1.png)
+![View Credential](./images/request-proof-part2.png)
+17. An holder user can choose credentials to give a proof presentation.
+![Present Proof](./images/present-proof.png)
+18. A verifier user can verify a proof.
+![Verify Proof](./images/verify-proof.png)
+19. After refreshing the page, the verifier user can see the proof has been successfully verified as it is reflected in the state field.
+![Verify Proof](./images/verify-proof-success.png)
