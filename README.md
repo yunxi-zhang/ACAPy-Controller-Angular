@@ -16,6 +16,7 @@ Currently, the frontend app can work with ACA-Py <b>V0.6.0</b> only. There're is
 |__ <b>acapy</b>: This folder contains all shell scripts to set up 3 ACA-Py agents with version 0.6.0.
 |__ <b>agent-specifc</b>: This folder contains some frontend pages customised for an holder and a verifier.
 |__ <b>agent</b>: This folder contains all the frontend app files.
+|__ <b>images</b>: This folder contains images of user guidance in the README file.
 |__ <b>common.sh</b>: This shell script defines the styling of information printed out. It is used by other shell script files.
 |__ <b>setup-agent.sh</b>: This shell script will auto create 3 frontend apps for an issuer, a holder and a verifier respectively.
 </pre>
