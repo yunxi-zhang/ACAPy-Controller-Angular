@@ -8,18 +8,8 @@ This repo is mainly used to run as a frontend controller app that connects to a 
 4. Docker Version: 20.10.8, build 3967b7d. Docker is optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 5. Docker Compose Version: 1.29.2, build 5becea4c. Docker is also optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 
-## ACA-Py Compatible Version
-Currently, this repo is only tested against ACA-Py <b>V0.6.0</b> for a simple happy path. This includes: 
-1. An issuer user can create/view a new credential schema/definition. 
-2. Connections can be established between any 2 of 3 agents. 
-3. A holder user can request a credential by starting with a credential request. 
-4. An issuer user can approve and issue a credential. 
-5. An holder user can store an issued credential to his/her wallet.
-6. A verifier user can request a proof request. 
-7. An holder user can choose credentials to give a proof presentation.
-8. A verifier user can verify a proof.
-
-There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation. 
+## Known Issues
+Currently, the frontend app can work with ACA-Py <b>V0.6.0</b> only. There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation. 
 
 ## Repo Structure
 <pre>
@@ -36,7 +26,7 @@ Please follow [my blog series](https://yunxi-zhang-75627.medium.com/hyperledger-
 ## Run the ACA-Py Agents in A Local Machine
 There are two approahces provided in this repo. 
 ### Approach 1 - Run 3 Shell Scripts
-3 seperate Shell scripts are provided in the folder named "acapy". Run them each in a separate terminal window is recommended, as this will give a clear log view for each of them. <br>
+3 seperate Shell scripts are provided in the folder named "acapy". Run them each in a separate terminal window is recommended, as this will give a clear log view for each of them. The ACA-Py agent's version used is <b>V0.6.0.</b><br>
 
 The 3 agents will use the docker "bridge" network by default and hardcoded container-level IPs for each. The IPs should correspond to the running containers if one runs them in the right order; otherwise, the user has to update these IPs to correspond to the real IPs used in the running containers.<br>
  
@@ -99,3 +89,14 @@ Below shows the port numbers used for each frontend app.
 | Issuer |  4000 |
 | Holder | 4001 |
 | Verifier | 4002 |
+
+## User Gudiance
+Currently, this repo is only tested against ACA-Py <b>V0.6.0</b> for a simple happy path. This includes: 
+1. An issuer user can create/view a new credential schema/definition. 
+2. Connections can be established between any 2 of 3 agents. 
+3. A holder user can request a credential by starting with a credential request. 
+4. An issuer user can approve and issue a credential. 
+5. An holder user can store an issued credential to his/her wallet.
+6. A verifier user can request a proof request. 
+7. An holder user can choose credentials to give a proof presentation.
+8. A verifier user can verify a proof.
