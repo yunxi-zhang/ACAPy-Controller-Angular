@@ -9,7 +9,9 @@ This repo is mainly used to run as 3 frontend controller apps that each connects
 5. Docker Compose Version: 1.29.2, build 5becea4c. Docker is also optional, it is only needed when running ACA-Py agents in the same local machine of the frontend app is required.
 
 ## Known Issues
-Currently, the frontend app can work with ACA-Py <b>V0.6.0</b> only. There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation. 
+1. Currently, the frontend app can work with ACA-Py <b>V0.6.0</b> only. There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation.
+
+2. Issued and valid credentials are also shown in the Revoked section of the Credential page. 
 
 ## Repo Structure
 <pre>
