@@ -14,6 +14,7 @@ export class NewDefinitionComponent implements OnInit {
   payload: any;
   definitionObject: any;
   definition: any;
+  schemaID: any;
   definitionForm = this.fb.group({
     schemaID: [''],
     supportRevocation: [''],
@@ -37,6 +38,8 @@ export class NewDefinitionComponent implements OnInit {
           this.definition = definition;
           this.definitionObject = this.definition && JSON.stringify(this.definition, null, 4) || '';
           this.definitionObject = JSON.parse(this.definitionObject);
+          this.setSchemaID(this.definitionObject.credential_definition_id, this.definitionForm.value.schemaID);
+          this.schemaID = this.definitionForm.value.schemaID;
         })
       )
       .subscribe(
@@ -47,6 +50,10 @@ export class NewDefinitionComponent implements OnInit {
           console.log('Error in onSubmitCreationDefinition', err);
         }
       );
+  }
+
+  setSchemaID(definitionID, schemaID) {
+    localStorage.setItem(definitionID, schemaID);
   }
 
 }

@@ -10,6 +10,7 @@ import { map, tap } from 'rxjs/operators';
 export class DefinitionCardComponent implements OnInit {
   @Input() definitionID: any;
   definitionDetail: any;
+  schemaID: any;
   constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class DefinitionCardComponent implements OnInit {
       .pipe(
         map((definitionDetail: any) => {
           this.definitionDetail = definitionDetail;
+          this.schemaID = localStorage.getItem(this.definitionID);
         })
       )
       .subscribe()
