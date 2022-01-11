@@ -100,6 +100,14 @@ export class AgentService {
       );
   }
 
+  revokeCredential(payload: any): Observable<any> {
+    return this.http.post<any>('/revocation/revoke', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('revokeCredential', null))
+      );
+  }
+
   //Call GET APIs
   getStatus(): Observable<AgentStatus> {
     return this.http.get<any>('/status')

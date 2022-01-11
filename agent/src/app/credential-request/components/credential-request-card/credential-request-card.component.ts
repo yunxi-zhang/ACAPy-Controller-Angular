@@ -33,6 +33,8 @@ export class CredentialRequestCardComponent implements OnInit {
   approval: string;
   credentialRequestResult: string;
   issueCredentialResult: string;
+  credentialExchangeIDs: any[] = [];
+  AVAIL_SUFFIX: string = "_available";
 
   constructor(private agentService: AgentService) { }
 
@@ -50,6 +52,14 @@ export class CredentialRequestCardComponent implements OnInit {
     this.schemaIssuerDID = this.issuerDID;
     this.schemaName = this.schemaID.split(':')[2];
     this.schemaVersion = this.schemaID.split(':')[3];
+  }
+
+  setCredentialExchangeID(connectionID, credentialExchangeID) {
+    if (localStorage.getItem(connectionID + this.AVAIL_SUFFIX) !== null ) {
+      this.credentialExchangeIDs = JSON.parse(localStorage.getItem(connectionID + this.AVAIL_SUFFIX));
+    }
+    this.credentialExchangeIDs.push(credentialExchangeID);
+    localStorage.setItem(connectionID + this.AVAIL_SUFFIX, JSON.stringify(this.credentialExchangeIDs));
   }
 
   onSubmitSenderOffer() {
@@ -105,6 +115,9 @@ export class CredentialRequestCardComponent implements OnInit {
 
   onSubmitCredentialIssuance() {
     try {
+      this.credExID = this.credentialRequest.cred_ex_record.cred_ex_id;
+      this.connectionID = this.credentialRequest.cred_ex_record.conn_id;
+      this.setCredentialExchangeID(this.connectionID, this.credExID);
       this.issueCredentialPayload = new IssueCredential().updateBodyPayLoadTemplate(this.issueCredentialComment);
       this.agentService.issueCredential(this.credentialRequest.cred_ex_record.cred_ex_id, this.issueCredentialPayload)
       .pipe(
