@@ -10,8 +10,7 @@ This repo is mainly used to run as 3 frontend controller apps that each connects
 
 ## Known Issues
 1. Currently, the frontend app can work with ACA-Py <b>V0.6.0</b> only. There're issues of using this frontend app when it's tested against ACA-Py <b>V0.7.0</b> and above, and it will fail when a holder user sends a proof presentation.
-2. Issued and valid credentials are also shown in the Revoked section of the Credential page. 
-3. As a simple demo, data validation (e.g. user's input data) has not been implemented.
+2. As a simple demo, data validation (e.g. user's input data) and error handling have not been implemented.
 
 ## Repo Structure
 <pre>
