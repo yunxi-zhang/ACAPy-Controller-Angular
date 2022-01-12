@@ -15,13 +15,13 @@
         <div class="card-text">
             <div>
                 <b>Verification State:</b>
-                <p [ngStyle]="{'color': proof.state === 'verified' ? 'green' : 'red'}">{{ proof?.state | titlecase}}</p>
+                <p [ngStyle]="{'color': proof.state === 'verified' ? 'green' : 'olive'}">{{ proof?.state | titlecase}}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
                 <b>Verification Result:</b>
-                <p [ngStyle]="{'color': proof.verified === 'false' ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
+                <p [ngStyle]="{'color': proof.verified === 'No Result' ? 'olive' : (proof.verified === 'false') ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
             </div>
         </div>
         <div class="card-text">

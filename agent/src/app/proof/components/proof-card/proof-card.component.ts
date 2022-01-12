@@ -37,6 +37,7 @@ export class ProofCardComponent implements OnInit {
     this.covertEpochToLocalDate(this.proof.presentation_request.non_revoked.to);
     this.getAttributes();
     this.getPredicates();
+    this.setDefaultVerificationResult();
 
     this.agentService.getCredentials()
       .pipe(
@@ -117,5 +118,11 @@ export class ProofCardComponent implements OnInit {
 
   getEpochOfCurrentDate() {
     return Math.floor(new Date().getTime() / 1000);
+  }
+
+  setDefaultVerificationResult() {
+    if (!this.proof.verified) {
+      this.proof.verified = 'No Result';
+    }
   }
 }
