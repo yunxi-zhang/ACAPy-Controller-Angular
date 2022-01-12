@@ -4,6 +4,7 @@ import { CredentialComponent } from './components/credential/credential.componen
 import { CredentialListComponent } from './components/credential-list/credential-list.component';
 import { CredentialResolverService } from './credential-resolver.resolver';
 import { RevokeCredentialComponent } from './components/revoke-credential/revoke-credential.component';
+import { RevokedCredentialComponent } from './components/revoked-credential/revoked-credential.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'issued', component: CredentialListComponent, resolve: {CredentialResolverService} },
       { path: 'toRevoke', component: RevokeCredentialComponent },
-      { path: 'revoked', component: CredentialListComponent },
+      { path: 'revoked', component: RevokedCredentialComponent },
       { path: '', redirectTo: 'issued' },
     ]
   }

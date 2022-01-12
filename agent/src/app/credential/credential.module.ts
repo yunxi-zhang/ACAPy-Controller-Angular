@@ -9,9 +9,10 @@ import { CredentialComponent } from './components/credential/credential.componen
 import { CredentialListComponent } from './components/credential-list/credential-list.component';
 import { CredentialCardComponent } from './components/credential-card/credential-card.component';
 import { RevokeCredentialComponent } from './components/revoke-credential/revoke-credential.component';
+import { RevokedCredentialComponent } from './components/revoked-credential/revoked-credential.component';
 
 @NgModule({
-  declarations: [CredentialComponent, CredentialListComponent, CredentialCardComponent, RevokeCredentialComponent],
+  declarations: [CredentialComponent, CredentialListComponent, CredentialCardComponent, RevokeCredentialComponent, RevokedCredentialComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -209,6 +209,14 @@ export class AgentService {
       );
   }
 
+  checkRevokedCredential(credentialExchangeID): Observable<any[]> {
+    return this.http.get<any[]>(`/revocation/credential-record?cred_ex_id=${credentialExchangeID}`)
+      .pipe(
+        switchMap((response: any) => of(response.result)),
+        catchError(this.handleError<any[]>('checkRevokedCredential', []))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
