@@ -123,6 +123,10 @@ export class ProofCardComponent implements OnInit {
   setDefaultVerificationResult() {
     if (!this.proof.verified) {
       this.proof.verified = 'No Result';
+    } else if (this.proof.verified === 'true') {
+      this.proof.verified = 'passed';
+    } else {
+      this.proof.verified = 'failed';
     }
   }
 }

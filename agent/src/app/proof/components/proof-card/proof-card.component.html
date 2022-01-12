@@ -21,7 +21,7 @@
         <div class="card-text">
             <div>
                 <b>Verification Result:</b>
-                <p [ngStyle]="{'color': proof.verified === 'No Result' ? 'olive' : (proof.verified === 'false') ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
+                <p [ngStyle]="{'color': proof.verified === 'No Result' ? 'olive' : (proof.verified === 'failed') ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
             </div>
         </div>
         <div class="card-text">
