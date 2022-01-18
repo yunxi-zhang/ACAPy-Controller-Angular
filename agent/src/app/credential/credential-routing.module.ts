@@ -12,8 +12,8 @@ const routes: Routes = [
     component: CredentialComponent,
     children: [
       { path: 'issued', component: CredentialListComponent, resolve: {CredentialResolverService} },
-      { path: 'toRevoke', component: RevokeCredentialComponent },
-      { path: 'revoked', component: RevokedCredentialComponent },
+      { path: 'revoke', component: RevokeCredentialComponent },
+      { path: 'validity', component: RevokedCredentialComponent },
       { path: '', redirectTo: 'issued' },
     ]
   }

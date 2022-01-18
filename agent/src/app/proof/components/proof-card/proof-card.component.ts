@@ -66,6 +66,7 @@ export class ProofCardComponent implements OnInit {
     this.constructAttributeObject(this.credential);
     this.constructPredicateObject(this.predCredential);
     this.payload = new SendPresentation().updateBodyPayLoadTemplate(this.attributeObject, this.predicateObject);
+    console.log('payload:', this.payload.bodyPayloadTemplate);
     this.agentService.sendProofPresentation(this.proof.presentation_exchange_id, this.payload.bodyPayloadTemplate)
       .subscribe(
         res => {
