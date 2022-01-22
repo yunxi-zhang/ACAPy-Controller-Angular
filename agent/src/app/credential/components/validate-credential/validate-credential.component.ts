@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './revoked-credential.component.html',
   styleUrls: ['./revoked-credential.component.scss']
 })
-export class RevokedCredentialComponent implements OnInit {
+export class ValidateCredentialComponent implements OnInit {
   connectionID: any;
   revokedCredentialExchangeIDs: any[] = [];
   revokedCredentialExchangeID: any;

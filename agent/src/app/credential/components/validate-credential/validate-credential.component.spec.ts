@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RevokedCredentialComponent } from './revoked-credential.component';
+import { ValidateCredentialComponent } from './validate-credential.component';
 
-describe('RevokedCredentialComponent', () => {
-  let component: RevokedCredentialComponent;
-  let fixture: ComponentFixture<RevokedCredentialComponent>;
+describe('ValidateCredentialComponent', () => {
+  let component: ValidateCredentialComponent;
+  let fixture: ComponentFixture<ValidateCredentialComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RevokedCredentialComponent ]
+      declarations: [ ValidateCredentialComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RevokedCredentialComponent);
+    fixture = TestBed.createComponent(ValidateCredentialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
