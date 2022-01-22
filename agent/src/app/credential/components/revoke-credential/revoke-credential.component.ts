@@ -16,6 +16,7 @@ export class RevokeCredentialComponent implements OnInit {
   payload: any;
   AVAIL_SUFFIX: string = "_available";
   REVOKED_SUFFIX: string = "_revoked";
+  revokeResult = "not yet started";
 
   constructor(private agentService: AgentService) { }
 
@@ -66,8 +67,18 @@ export class RevokeCredentialComponent implements OnInit {
         this.setRevokedCredentialExchangeIDs(this.connectionID, this.credentialExchangeID);
       })
     )
-    .subscribe()
-    
+    .subscribe(
+      res => {
+        console.log('Response in onSubmitPresentation:', res);
+      },
+      err => {
+        console.log('Error in onSubmitPresentation', err);
+        this.revokeResult = "failed";
+      },
+      () => {
+        this.revokeResult = "success";
+      }
+    );
   }
 
 }
