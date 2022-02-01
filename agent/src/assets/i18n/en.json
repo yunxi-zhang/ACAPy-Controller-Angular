@@ -9,5 +9,8 @@
         { "label": "Credential Requests", "url": "/credentialRequests" },
         { "label": "Credentials", "url": "/credentials" },
         { "label": "Proofs", "url": "/proofs" }
-    ]
+    ],
+    "index": {
+        "home": "Home"
+    }
 }

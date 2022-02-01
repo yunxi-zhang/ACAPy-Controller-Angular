@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse justify-content-end navbar-collapse-markup">
         <div class="navbar-nav">
             <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                [routerLinkActiveOptions]="{ exact: true }">{{ 'index.home' | translate }}</a>
             <a *ngFor="let moreNavLink of moreNavLinks" class="nav-item nav-link" routerLink="{{ moreNavLink.url }}"
                 routerLinkActive="active">{{ moreNavLink.label }}</a>
         </div>

@@ -9,6 +9,9 @@
         { "label": "凭证请求", "url": "/credentialRequests" },
         { "label": "凭证", "url": "/credentials" },
         { "label": "证明", "url": "/proofs" }
-    ]
+    ],
+    "index": {
+        "home": "首页"
+    }
     
 }
