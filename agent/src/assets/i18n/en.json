@@ -1,6 +1,8 @@
 {
     "header": {
-        "title": "Issuer"
+        "issuer": "Issuer",
+        "holder": "Holder",
+        "verifier": "Verifier"
     },
     "menu": [
         { "label": "Schemas", "url": "/schemas" },

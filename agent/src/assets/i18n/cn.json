@@ -1,6 +1,8 @@
 {
     "header": {
-        "title": "颁发者"
+        "issuer": "颁发者",
+        "holder": "持有者",
+        "verifier": "核实者"
     },
     "menu": [
         { "label": "结构", "url": "/schemas" },
