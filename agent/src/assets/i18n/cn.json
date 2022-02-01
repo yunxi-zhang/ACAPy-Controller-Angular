@@ -1,8 +1,8 @@
 {
     "header": {
-        "issuer": "颁发者",
-        "holder": "持有者",
-        "verifier": "核实者"
+        "issuer": "颁发人",
+        "holder": "持有人",
+        "verifier": "核实人"
     },
     "menu": [
         { "label": "结构", "url": "/schemas" },
