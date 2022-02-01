@@ -1,5 +1,13 @@
 {
-    "HEADER": {
-        "TITLE": "Issuer"
-    }
+    "header": {
+        "title": "Issuer"
+    },
+    "menu": [
+        { "label": "Schemas", "url": "/schemas" },
+        { "label": "Definitions", "url": "/definitions" },
+        { "label": "Connections", "url": "/connections" },
+        { "label": "Credential Requests", "url": "/credentialRequests" },
+        { "label": "Credentials", "url": "/credentials" },
+        { "label": "Proofs", "url": "/proofs" }
+    ]
 }

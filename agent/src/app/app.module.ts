@@ -10,6 +10,7 @@ import { NavCardListComponent } from './components/nav-card-list/nav-card-list.c
 import { InterceptorService } from './services/interceptor.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,6 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

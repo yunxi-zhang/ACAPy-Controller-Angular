@@ -1,5 +1,14 @@
 {
-    "HEADER": {
-        "TITLE": "颁发者"
-    }
+    "header": {
+        "title": "颁发者"
+    },
+    "menu": [
+        { "label": "结构", "url": "/schemas" },
+        { "label": "定义", "url": "/definitions" },
+        { "label": "连接", "url": "/connections" },
+        { "label": "凭证请求", "url": "/credentialRequests" },
+        { "label": "凭证", "url": "/credentials" },
+        { "label": "证明", "url": "/proofs" }
+    ]
+    
 }

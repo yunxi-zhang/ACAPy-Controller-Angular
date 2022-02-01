@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-
 import { NavLink } from 'src/app/models/nav-link';
 
 @Component({
