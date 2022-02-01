@@ -26,6 +26,9 @@
         "issued": "已颁发",
         "revoke": "撤销",
         "validity": "有效性"
+    },
+    "search": {
+        "empty-result": "看来这里什么都没有!"
     }
     
 }

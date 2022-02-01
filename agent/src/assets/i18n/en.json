@@ -26,5 +26,8 @@
         "issued": "Issued",
         "revoke": "Revoke",
         "validity": "Validity"
+    },
+    "search": {
+        "empty-result": "Looks like there's nothing here yet!"
     }
 }
