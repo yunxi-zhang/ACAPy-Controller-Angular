@@ -7,6 +7,7 @@ import { CredentialRequestListComponent } from './components/credential-request-
 import { CredentialRequestCardComponent } from './components/credential-request-card/credential-request-card.component';
 import { NewCredentialRequestComponent } from './components/new-credential-request/new-credential-request.component';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     CredentialRequestRoutingModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class CredentialRequestModule { }

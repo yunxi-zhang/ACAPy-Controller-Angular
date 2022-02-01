@@ -1,7 +1,7 @@
 <app-component-nav>
     <a class="nav-item nav-link" routerLink="created" routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }">Created</a>
+    [routerLinkActiveOptions]="{ exact: true }">{{ 'submenu.created' | translate }}</a>
     <a class="nav-item nav-link" routerLink="new" routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">New</a>
+        [routerLinkActiveOptions]="{ exact: true }">{{ 'submenu.new' | translate }}</a>
 </app-component-nav>
 <router-outlet></router-outlet>

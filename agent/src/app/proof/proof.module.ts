@@ -7,6 +7,7 @@ import { ProofComponent } from './components/proof/proof.component';
 import { ProofListComponent } from './components/proof-list/proof-list.component';
 import { ProofCardComponent } from './components/proof-card/proof-card.component';
 import { NewProofComponent } from './components/new-proof/new-proof.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ProofComponent, ProofListComponent, ProofCardComponent, NewProofComponent],
@@ -15,7 +16,8 @@ import { NewProofComponent } from './components/new-proof/new-proof.component';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    ProofRoutingModule
+    ProofRoutingModule,
+    TranslateModule
   ]
 })
 export class ProofModule { }

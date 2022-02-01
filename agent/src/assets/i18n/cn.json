@@ -12,6 +12,18 @@
     ],
     "index": {
         "home": "首页"
+    },
+    "submenu": {
+        "created": "已建",
+        "new": "新建",
+        "active": "有效",
+        "pending": "等待",
+        "accept": "接受",
+        "requested": "已请求",
+        "received": "已接受",
+        "issued": "已颁发",
+        "revoke": "撤销",
+        "validity": "有效性"
     }
     
 }

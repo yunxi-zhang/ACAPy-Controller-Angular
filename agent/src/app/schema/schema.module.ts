@@ -7,7 +7,7 @@ import { SchemaComponent } from './components/schema/schema.component';
 import { NewSchemaComponent } from './components/new-schema/new-schema.component';
 import { SchemaListComponent } from './components/schema-list/schema-list.component';
 import { SchemaCardComponent } from './components/schema-card/schema-card.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { SchemaCardComponent } from './components/schema-card/schema-card.compon
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    SchemaRoutingModule
+    SchemaRoutingModule,
+    TranslateModule
   ]
 })
 export class SchemaModule { }

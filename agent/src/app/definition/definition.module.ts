@@ -9,7 +9,7 @@ import { DefinitionCardComponent } from './component/definition-card/definition-
 import { NewDefinitionComponent } from './component/new-definition/new-definition.component';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatButtonModule} from '@angular/material/button';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { MatButtonModule} from '@angular/material/button';
     SharedModule,
     DefinitionRoutingModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule
   ]
 })
 export class DefinitionModule { }

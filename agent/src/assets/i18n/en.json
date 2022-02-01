@@ -12,5 +12,17 @@
     ],
     "index": {
         "home": "Home"
+    },
+    "submenu": {
+        "created": "Created",
+        "new": "New",
+        "active": "Active",
+        "pending": "Pending",
+        "accept": "Accept",
+        "requested": "Requested",
+        "received": "Received",
+        "issued": "Issued",
+        "revoke": "Revoke",
+        "validity": "Validity"
     }
 }
