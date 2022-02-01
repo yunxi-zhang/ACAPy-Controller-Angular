@@ -23,9 +23,13 @@ export class InterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
     this.spinner.show();
-    req = req.clone({
-      url: this.formattedAgentUrl + req.url
-    });
+    //if using i18n files,
+    //use frontend's port number
+    if (!req.url.includes('/assets/i18n/')) {
+      req = req.clone({
+        url: this.formattedAgentUrl + req.url
+      });
+    }
     return next.handle(req).pipe(
       finalize(() => {
         this.spinner.hide();
