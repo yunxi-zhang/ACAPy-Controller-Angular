@@ -4,12 +4,12 @@
             <div class="card-body">
                 <div class="card-title">
                     <small>
-                        <span>Please type in infomration for a new schmea</span>
+                        <span>{{ 'schema.new-type-in' | translate }}</span>
                     </small>
                 </div>
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Schema Name:</small>&nbsp;
+                        <small class="text-muted">{{ 'schema.new-schema-name' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="passport" aria-label="Default"
@@ -19,7 +19,7 @@
                 <br />
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Schema Version:</small>&nbsp;
+                        <small class="text-muted">{{ 'schema.new-schema-version' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="1.0" aria-label="Default"
@@ -31,7 +31,7 @@
                     <div formArrayName="attributes">
                         <div *ngFor="let attribute of attributes.controls; let i = index">
                             <span>
-                                <small class="text-muted">Schema Attribute Name:</small>&nbsp;
+                                <small class="text-muted">{{ 'schema.new-schema-attribute-name' | translate }}:</small>&nbsp;
                             </span>
                             <span>
                                 <div class="input-group mb-3">
@@ -42,15 +42,13 @@
                             </span>
                         </div>
                         <div class="input-group-append">
-                            <button type="button" class="btn btn-info" (click)="addAttribute()">Add another
-                                attribute +</button>
+                            <button type="button" class="btn btn-info" (click)="addAttribute()">{{ 'schema.new-add-attribute' | translate }}</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">Create New
-            Schema</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">{{ 'schema.new-create-schema' | translate }}</button>
     </form>
     <div *ngIf="schema" class="row">
         <div class="col-12">

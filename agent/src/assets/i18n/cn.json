@@ -33,7 +33,13 @@
         "search": "搜索"
     },
     "schema": {
-        "search-did": "搜索颁发人创建的公共DID"
+        "search-did": "搜索颁发人创建的公共DID",
+        "new-type-in": "请输入新凭证结构的信息",
+        "new-schema-name": "凭证结构名称",
+        "new-schema-version": "凭证结构版本",
+        "new-schema-attribute-name": "凭证结构属性名称",
+        "new-add-attribute": "添加新属性+",
+        "new-create-schema": "新建凭证结构"
     }
     
 }

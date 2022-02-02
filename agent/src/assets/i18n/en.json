@@ -33,6 +33,12 @@
         "search": "Search"
     },
     "schema": {
-        "search-did": "Search Issuer's Created Schemas by a Pubilc DID"
+        "search-did": "Search Issuer's Created Schemas by a Pubilc DID",
+        "new-type-in": "Please type in infomration for a new schmea",
+        "new-schema-name": "Schema Name",
+        "new-schema-version": "Schema Version",
+        "new-schema-attribute-name": "Schema Attribute Name",
+        "new-add-attribute": "Add another attribute +",
+        "new-create-schema": "Create New Schema"
     }
 }
