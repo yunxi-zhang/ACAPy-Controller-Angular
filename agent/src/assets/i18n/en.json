@@ -31,7 +31,8 @@
         "empty-result": "Looks like there's nothing here yet!",
         "search-result": "Search Result",
         "search": "Search",
-        "search-did": "Search Issuer's Created Schemas by a Pubilc DID"
+        "search-did": "Search Issuer's Created Schemas by a Pubilc DID",
+        "revoke": "Revoke"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -61,5 +62,10 @@
         "new-connection-id": "Connection ID",
         "new-comment": "Comment",
         "new-create-credential-proposal-request": "Create New Credential Proposal Request"
+    },
+    "credential": {
+        "revoke-connection-id": "Connection ID",
+        "revoke-credential-exchange-id": "Credential Exchange ID",
+        "validity-revocation-status": "Revocation Status"
     }
 }
