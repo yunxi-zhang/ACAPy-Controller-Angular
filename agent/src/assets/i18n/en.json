@@ -27,7 +27,12 @@
         "revoke": "Revoke",
         "validity": "Validity"
     },
-    "search": {
-        "empty-result": "Looks like there's nothing here yet!"
+    "shared": {
+        "empty-result": "Looks like there's nothing here yet!",
+        "search-result": "Search Result",
+        "search": "Search"
+    },
+    "schema": {
+        "search-did": "Search Issuer's Created Schemas by a Pubilc DID"
     }
 }
