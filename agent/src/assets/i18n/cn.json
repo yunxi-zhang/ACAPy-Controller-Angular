@@ -32,7 +32,9 @@
         "search-result": "搜索结果",
         "search": "搜索",
         "search-did": "搜索颁发人创建的公共DID",
-        "revoke": "撤销"
+        "revoke": "撤销",
+        "connection-id": "连接ID",
+        "comment": "评论"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -59,19 +61,14 @@
     "credential-request": {
         "new-search-schema": "搜索颁发人的凭证结构信息",
         "new-credential-proposal-request": "新凭证提议请求",
-        "new-connection-id": "连接ID",
-        "new-comment": "评论",
         "new-create-credential-proposal-request": "新建凭证提议请求"
     },
     "credential": {
-        "revoke-connection-id": "连接ID",
         "revoke-credential-exchange-id": "凭证交换ID",
         "validity-revocation-status": "撤销状态"
     },
     "proof": {
         "new-new-proof": "新建证明",
-        "new-conneciton-id": "连接ID",
-        "new-comment": "评论",
         "new-comment-message": "请输入评论",
         "new-requeest-name": "请求名称",
         "new-requested-attribute-names": "所需属性名称",
