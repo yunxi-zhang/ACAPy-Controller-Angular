@@ -54,5 +54,12 @@
         "accept-invitation-block": "Paste invitation object block",
         "accept-invitation-url": "Alternatively paste an invitation URL",
         "accept-invitation": "Accept Invitation"
+    },
+    "credential-request": {
+        "new-search-schema": "Search Issuer's Credential Schema Information",
+        "new-credential-proposal-request": "New Credential Proposal Request",
+        "new-connection-id": "Connection ID",
+        "new-comment": "Comment",
+        "new-create-credential-proposal-request": "Create New Credential Proposal Request"
     }
 }

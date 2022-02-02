@@ -54,5 +54,12 @@
         "accept-invitation-block": "粘贴邀请对象代码",
         "accept-invitation-url": "或者粘贴邀请链接",
         "accept-invitation": "接受邀请"
+    },
+    "credential-request": {
+        "new-search-schema": "搜索颁发人的凭证结构信息",
+        "new-credential-proposal-request": "新凭证提议请求",
+        "new-connection-id": "连接ID",
+        "new-comment": "评论",
+        "new-create-credential-proposal-request": "新建凭证提议请求"
     }
 }
