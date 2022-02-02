@@ -1,7 +1,7 @@
 <div class="container">
     <form novalidate autocomplete="off" [formGroup]="form">
         <div class="form-group">
-            <label for="invitationObject">Paste invitation object block:</label>
+            <label for="invitationObject">{{ 'connection.accept-invitation-block' | translate }}:</label>
             <textarea class="form-control"
                 [ngClass]="{'is-invalid': (invitation.touched || invitation.dirty) && invitation.invalid}"
                 id="invitationObject" cols="30" rows="10" [formControl]="invitation"></textarea>
@@ -12,14 +12,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="invitationUrl">Alternatively paste an invitation URL:</label>
+            <label for="invitationUrl">{{ 'connection.accept-invitation-url' | translate }}:</label>
             <input type="text" class="form-control" id="invitationUrl" [formControl]="invitationUrl">
             <small *ngIf="invitationUrlError$ | async">Unable to process that URL:
                 {{ invitationUrlError$ | async }}</small>
         </div>
         <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()"
-            [disabled]="form.invalid">Accept
-            Invitation
-        </button>
+            [disabled]="form.invalid">{{ 'connection.accept-invitation' | translate }}</button>
     </form>
 </div>

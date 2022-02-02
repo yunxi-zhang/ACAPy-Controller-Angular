@@ -48,5 +48,11 @@
         "new-revocation-registry-size": "Revocation Registry Size",
         "new-tag": "Tag",
         "new-create-definition": "Create New Definition"
+    },
+    "connection": {
+        "new-invitation": "Create New Invitation",
+        "accept-invitation-block": "Paste invitation object block",
+        "accept-invitation-url": "Alternatively paste an invitation URL",
+        "accept-invitation": "Accept Invitation"
     }
 }

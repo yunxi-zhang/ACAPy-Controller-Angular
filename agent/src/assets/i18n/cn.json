@@ -48,5 +48,11 @@
         "new-revocation-registry-size": "撤销登记处大小",
         "new-tag": "标签",
         "new-create-definition": "新建凭证定义"
+    },
+    "connection": {
+        "new-invitation": "新建邀请",
+        "accept-invitation-block": "粘贴邀请对象代码",
+        "accept-invitation-url": "或者粘贴邀请链接",
+        "accept-invitation": "接受邀请"
     }
 }
