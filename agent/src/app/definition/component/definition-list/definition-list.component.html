@@ -4,7 +4,7 @@
             <div class="card-body" style="width: 25rem;">
                 <div class="card-title">
                     <small>
-                        <span>Search Issuer's Created Schemas by a Pubilc DID</span>
+                        <span>{{ 'shared.search-did' | translate }}</span>
                     </small>
                 </div>
                 <div class="btn-group">
@@ -13,7 +13,7 @@
                     </select>
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" (click)="onSearch()"
-                            class="btn btn-primary">Search</button>
+                            class="btn btn-primary">{{ 'shared.search' | translate }}</button>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
 </div>
 <div class="card-columns">
     <div class="container">
-        <h3><span class="badge badge-success">Search Result</span></h3>
+        <h3><span class="badge badge-success">{{ 'shared.search-result' | translate }}</span></h3>
     </div>
 </div>
 <div class="card-columns">

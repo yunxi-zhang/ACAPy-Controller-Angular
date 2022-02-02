@@ -4,12 +4,12 @@
             <div class="card-body">
                 <div class="card-title">
                     <small>
-                        <span>Please type in infomration for a new definition</span>
+                        <span>{{ 'definition.new-type-in' | translate }}</span>
                     </small>
                 </div>
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Schema ID:</small>&nbsp;
+                        <small class="text-muted">{{ 'definition.new-schema-id' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="MtSBSkitb28PSoCj9EpSDs:2:passport18:0.1"
@@ -20,7 +20,7 @@
                 <br />
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Support Revocation:</small>&nbsp;
+                        <small class="text-muted">{{ 'definition.new-support-revocation' | translate }}:</small>&nbsp;
                     </span>
                     <select class="form-select form-select-lg" aria-label=".form-select-lg example" style="width: 4rem;"
                         formControlName="supportRevocation">
@@ -31,7 +31,7 @@
                 <br />
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Revocation Registry Size:</small>&nbsp;
+                        <small class="text-muted">{{ 'definition.new-revocation-registry-size' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="10000" aria-label="Default"
@@ -42,7 +42,7 @@
                 <br />
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Tag:</small>&nbsp;
+                        <small class="text-muted">{{ 'definition.new-tag' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="passport" aria-label="Default"
@@ -51,8 +51,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">Create New
-            Definition</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">{{ 'definition.new-create-definition' | translate }}</button>
     </form>
     <div *ngIf="definition" class="row">
         <div class="col-12">

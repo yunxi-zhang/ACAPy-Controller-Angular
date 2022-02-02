@@ -30,16 +30,23 @@
     "shared": {
         "empty-result": "看来这里什么也没有!",
         "search-result": "搜索结果",
-        "search": "搜索"
+        "search": "搜索",
+        "search-did": "搜索颁发人创建的公共DID"
     },
     "schema": {
-        "search-did": "搜索颁发人创建的公共DID",
         "new-type-in": "请输入新凭证结构的信息",
         "new-schema-name": "凭证结构名称",
         "new-schema-version": "凭证结构版本",
         "new-schema-attribute-name": "凭证结构属性名称",
         "new-add-attribute": "添加新属性+",
         "new-create-schema": "新建凭证结构"
+    },
+    "definition": {
+        "new-type-in": "请输入新凭证定义的信息",
+        "new-schema-id": "凭证ID",
+        "new-support-revocation": "支持撤销",
+        "new-revocation-registry-size": "撤销登记处大小",
+        "new-tag": "标签",
+        "new-create-definition": "新建凭证定义"
     }
-    
 }

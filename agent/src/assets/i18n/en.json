@@ -30,15 +30,23 @@
     "shared": {
         "empty-result": "Looks like there's nothing here yet!",
         "search-result": "Search Result",
-        "search": "Search"
+        "search": "Search",
+        "search-did": "Search Issuer's Created Schemas by a Pubilc DID"
     },
     "schema": {
-        "search-did": "Search Issuer's Created Schemas by a Pubilc DID",
         "new-type-in": "Please type in infomration for a new schmea",
         "new-schema-name": "Schema Name",
         "new-schema-version": "Schema Version",
         "new-schema-attribute-name": "Schema Attribute Name",
         "new-add-attribute": "Add another attribute +",
         "new-create-schema": "Create New Schema"
+    },
+    "definition": {
+        "new-type-in": "Please type in infomration for a new definition",
+        "new-schema-id": "Schema ID",
+        "new-support-revocation": "Support Revocation",
+        "new-revocation-registry-size": "Revocation Registry Size",
+        "new-tag": "Tag",
+        "new-create-definition": "Create New Definition"
     }
 }
