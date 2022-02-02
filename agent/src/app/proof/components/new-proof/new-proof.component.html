@@ -3,11 +3,11 @@
         <div class="card shadow-sm" style="width: 40rem;">
             <div class="card-body" style="width: 25rem;">
                 <div class="card-title">
-                    <span>Create a new proof</span>
+                    <span>{{ 'proof.new-new-proof' | translate }}</span>
                 </div>
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Connection ID:</small>&nbsp;
+                        <small class="text-muted">{{ 'proof.new-conneciton-id' | translate }}:</small>&nbsp;
                     </span>
                     <span>
                         <input type="text" class="form-control" placeholder="8794e8b4-ac9c-4043-9dd6-d3fd83fa6cb2"
@@ -17,33 +17,33 @@
                 </div>
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Comment:</small>&nbsp;
+                        <small class="text-muted">{{ 'proof.new-comment' | translate }}:</small>&nbsp;
                     </span>
                     <span>
-                        <input type="text" class="form-control" placeholder="Put your comment here" aria-label="Default"
+                        <input type="text" class="form-control" placeholder="{{ 'proof.new-comment-message' | translate}}" aria-label="Default"
                             aria-describedby="inputGroup-sizing-default" style="width: 22rem;"
                             formControlName="comment">&nbsp;
                     </span>
                 </div>
                 <div class="form-inline">
                     <span>
-                        <small class="text-muted">Request Name:</small>&nbsp;
+                        <small class="text-muted">{{ 'proof.new-requeest-name' | translate }}:</small>&nbsp;
                     </span>
                     <span>
-                        <input type="text" class="form-control" placeholder="A request name" aria-label="Default"
+                        <input type="text" class="form-control" placeholder="{{ 'proof.new-requeest-name' | translate }}" aria-label="Default"
                             aria-describedby="inputGroup-sizing-default" style="width: 22rem;"
                             formControlName="requestName">&nbsp;
                     </span>
                 </div>
                 <div class="card-body">
                     <div class="card-title">
-                        <span>Requested Attribute Names</span>
+                        <span>{{ 'proof.new-requested-attribute-names' | translate }}</span>
                     </div>
                     <div class="card-text">
                         <div formArrayName="attributes">
                             <div *ngFor="let attribute of attributes.controls; let i = index">
                                 <span>
-                                    <small class="text-muted">Attribute Name {{ i + 1 }}:</small>&nbsp;
+                                    <small class="text-muted">{{ 'proof.new-attribute-name' | translate }}{{ i + 1 }}:</small>&nbsp;
                                 </span>
                                 <span>
                                     <div class="input-group mb-3">
@@ -55,23 +55,22 @@
                                 </span>
                             </div>
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-info" (click)="addAttribute()">Add another
-                                    attribute +</button>
+                                <button type="button" class="btn btn-info" (click)="addAttribute()">{{ 'proof.new-add-another-attribute' | translate }}</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="card-title">
-                        <span>Requested Predicates</span>
+                        <span>{{ 'proof.new-requested-predicates' | translate }}</span>
                     </div>
                     <div class="card-text">
                         <div formArrayName="predicates">
                             <div *ngFor="let predicate of predicates.controls; let i = index">
                                 <span>
-                                    <small class="text-muted">Predicate {{ i + 1 }}:</small>&nbsp;
+                                    <small class="text-muted">{{ 'proof.new-predicate' | translate }}{{ i + 1 }}:</small>&nbsp;
                                 </span>
-                                <span class="badge badge-warning">MUST have a space in between (e.g. DOB SPACE &lt;= SPACE 2000)
+                                <span class="badge badge-warning">{{ 'proof.new-space' | translate }}
                                     <div class="input-group mb-3">
                                         <input id="predicate-{{i}}" type="text" class="form-control"
                                             placeholder="DoB &lt;= 2000" aria-label="Default"
@@ -82,16 +81,14 @@
                                 
                             </div>
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-info" (click)="addPredicate()">Add another
-                                    predicate +</button>
+                                <button type="button" class="btn btn-info" (click)="addPredicate()">{{ 'proof.new-add-another-predicate' | translate }}</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">Create New
-            Proof</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" style="width: 40rem;">{{ 'proof.new-new-proof' | translate }}</button>
     </form>
     <div *ngIf="proofRequest" class="row">
         <div class="col-12">

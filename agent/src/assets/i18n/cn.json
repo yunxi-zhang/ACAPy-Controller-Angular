@@ -67,5 +67,19 @@
         "revoke-connection-id": "连接ID",
         "revoke-credential-exchange-id": "凭证交换ID",
         "validity-revocation-status": "撤销状态"
+    },
+    "proof": {
+        "new-new-proof": "新建证明",
+        "new-conneciton-id": "连接ID",
+        "new-comment": "评论",
+        "new-comment-message": "请输入评论",
+        "new-requeest-name": "请求名称",
+        "new-requested-attribute-names": "所需属性名称",
+        "new-attribute-name": "属性名称",
+        "new-add-another-attribute": "添加新属性+",
+        "new-requested-predicates": "所需谓词",
+        "new-predicate" : "谓词",
+        "new-space": "谓词之间必须有空格M(比如:DOB SPACE <= SPACE 2000)",
+        "new-add-another-predicate": "添加新谓词"
     }
 }

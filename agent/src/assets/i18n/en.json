@@ -67,5 +67,20 @@
         "revoke-connection-id": "Connection ID",
         "revoke-credential-exchange-id": "Credential Exchange ID",
         "validity-revocation-status": "Revocation Status"
+    },
+    "proof": {
+        "new-new-proof": "Create a new proof",
+        "new-conneciton-id": "Connection ID",
+        "new-comment": "Comment",
+        "new-comment-message": "Put your comment here",
+        "new-requeest-name": "Request Name",
+        "new-requested-attribute-names": "Requested Attribute Names",
+        "new-attribute-name": "Attribute Name",
+        "new-add-another-attribute": "Add another attribute +",
+        "new-requested-predicates": "Requested Predicates",
+        "new-predicate" : "Predicate",
+        "new-space": "MUST have a space in between (e.g. DOB SPACE <= SPACE 2000)",
+        "new-add-another-predicate": "Add another predicate +",
+        "new-create-new-proof": "Create New Proof"
     }
 }
