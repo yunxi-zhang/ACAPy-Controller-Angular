@@ -48,7 +48,8 @@
         "new-schema-attribute-name": "凭证结构属性名称",
         "new-add-attribute": "添加新属性+",
         "new-create-schema": "新建凭证结构",
-        "new-credential-schema-generated": "一个新的凭证结构已经生成"
+        "new-credential-schema-generated": "一个新的凭证结构已经生成",
+        "created-view-details": "点击结构ID查看更多信息"
     },
     "definition": {
         "new-type-in": "请输入新凭证定义的信息",

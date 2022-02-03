@@ -48,7 +48,8 @@
         "new-schema-attribute-name": "Schema Attribute Name",
         "new-add-attribute": "Add another attribute +",
         "new-create-schema": "Create New Schema",
-        "new-credential-schema-generated": "A new credential schema is generated as shown below"
+        "new-credential-schema-generated": "A new credential schema is generated as shown below",
+        "created-view-details": "Click on the Schema ID to view details"
     },
     "definition": {
         "new-type-in": "Please type in infomration for a new definition",

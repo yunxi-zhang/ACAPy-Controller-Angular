@@ -2,37 +2,37 @@
     <div class="card-body">
         <div class="card-title">
             <small>
-                <span>Click on the Schema ID to view details</span>
+                <span>`{{ 'schema.created-view-details' | }}</span>
             </small>
         </div>
         <div class="card-text">
             <span>
-                <small class="text-muted">Schema ID:</small>&nbsp;
+                <small class="text-muted">{{ 'shared.schema-id' | translate }}:</small>&nbsp;
             </span>
             <span><a class="cursor-pointer" (click)="getSchemaDetail()">{{ schemaID }}</a></span>
         </div>
         <div class="card-text">
             <span>
-                <small class="text-muted">Schema Name:</small>&nbsp;
+                <small class="text-muted">{{ 'shared.schema-name' | translate }}:</small>&nbsp;
             </span>
             <span>{{ schemaDetail?.name }}</span>
         </div>
         <div class="card-text">
             <span>
-                <small class="text-muted">Schema Version:</small>&nbsp;
+                <small class="text-muted">{{ 'shared.schema-version' | translate }}:</small>&nbsp;
             </span>
             <span>{{ schemaDetail?.version }}</span>
         </div>
         <div class="card-text">
             <span>
-                <small class="text-muted">Schema Attributes Preview:</small>&nbsp;
+                <small class="text-muted">{{ 'shared.schema-attribute-preview' | translate }}:</small>&nbsp;
             </span>
         </div>
         <ul>
             <li *ngFor="let attribute of schemaDetail?.attrNames">
                 <div>
                     <span>
-                        <small class="text-muted">Attribute:</small>&nbsp;
+                        <small class="text-muted">{{ 'shared.attribute' | translate }}:</small>&nbsp;
                     </span>
                     <span>{{ attribute }}</span>
                 </div>
