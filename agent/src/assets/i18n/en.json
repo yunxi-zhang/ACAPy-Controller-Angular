@@ -34,7 +34,12 @@
         "search-did": "Search Issuer's Created Schemas by a Pubilc DID",
         "revoke": "Revoke",
         "connection-id": "Connection ID",
-        "comment": "Comment"
+        "comment": "Comment",
+        "schema-id": "Schema ID",
+        "schema-name": "Schema Name",
+        "schema-version": "Schema Version",
+        "schema-attribute-preview": "Schema Attributes Preview",
+        "attribute": "Attribute"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -42,7 +47,8 @@
         "new-schema-version": "Schema Version",
         "new-schema-attribute-name": "Schema Attribute Name",
         "new-add-attribute": "Add another attribute +",
-        "new-create-schema": "Create New Schema"
+        "new-create-schema": "Create New Schema",
+        "new-credential-schema-generated": "A new credential schema is generated as shown below"
     },
     "definition": {
         "new-type-in": "Please type in infomration for a new definition",

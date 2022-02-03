@@ -53,37 +53,37 @@
     <div *ngIf="schema" class="row">
         <div class="col-12">
             <div class="form-group">
-                <label>A new credential schema is generated as shown below:</label>
+                <label>{{ 'schema.new-credential-schema-generated' | translate }}:</label>
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="card-text">
                             <span>
-                                <small class="text-muted">Schema ID:</small>&nbsp;
+                                <small class="text-muted">{{ 'shared.schema-id' | translate }}:</small>&nbsp;
                             </span>
                             <span>{{ schemaObject?.schema?.id }}</span>
                         </div>
                         <div class="card-text">
                             <span>
-                                <small class="text-muted">Schema Name:</small>&nbsp;
+                                <small class="text-muted">{{ 'shared.schema-name' | translate }}:</small>&nbsp;
                             </span>
                             <span>{{ schemaObject?.schema?.name }}</span>
                         </div>
                         <div class="card-text">
                             <span>
-                                <small class="text-muted">Schema Version:</small>&nbsp;
+                                <small class="text-muted">{{ 'shared.schema-version' | translate }}:</small>&nbsp;
                             </span>
                             <span>{{ schemaObject?.schema?.version }}</span>
                         </div>
                         <div class="card-text">
                             <span>
-                                <small class="text-muted">Schema Attributes Preview:</small>&nbsp;
+                                <small class="text-muted">{{ 'shared.attribute-preview' | translate }}:</small>&nbsp;
                             </span>
                         </div>
                         <ul>
                             <li *ngFor="let attribute of schemaObject?.schema?.attrNames">
                                 <div>
                                     <span>
-                                        <small class="text-muted">Attribute:</small>&nbsp;
+                                        <small class="text-muted">{{ 'shared.attribute' | translate }}:</small>&nbsp;
                                     </span>
                                     <span>{{ attribute }}</span>
                                 </div>

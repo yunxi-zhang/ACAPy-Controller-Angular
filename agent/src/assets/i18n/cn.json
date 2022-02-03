@@ -34,7 +34,12 @@
         "search-did": "搜索颁发人创建的公共DID",
         "revoke": "撤销",
         "connection-id": "连接ID",
-        "comment": "评论"
+        "comment": "评论",
+        "schema-id": "结构ID",
+        "schema-name": "结构名称",
+        "schema-version": "结构版本",
+        "schema-attribute-preview": "结构属性预览",
+        "attribute": "属性"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -42,7 +47,8 @@
         "new-schema-version": "凭证结构版本",
         "new-schema-attribute-name": "凭证结构属性名称",
         "new-add-attribute": "添加新属性+",
-        "new-create-schema": "新建凭证结构"
+        "new-create-schema": "新建凭证结构",
+        "new-credential-schema-generated": "一个新的凭证结构已经生成"
     },
     "definition": {
         "new-type-in": "请输入新凭证定义的信息",
