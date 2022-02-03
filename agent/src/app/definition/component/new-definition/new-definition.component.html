@@ -56,12 +56,12 @@
     <div *ngIf="definition" class="row">
         <div class="col-12">
             <div class="form-group">
-                <label>A new credential definition is generated as shown below:</label>
+                <label>{{ 'definition.new-definition-generated' | translate }}:</label>
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="card-text">
                             <span>
-                                <small class="text-muted">Definition ID:</small>&nbsp;
+                                <small class="text-muted">{{ 'shared.definition-id' | translate }}:</small>&nbsp;
                             </span>
                             <span>{{ definitionObject?.credential_definition_id }}</span>
                         </div>

@@ -39,7 +39,9 @@
         "schema-name": "结构名称",
         "schema-version": "结构版本",
         "schema-attribute-preview": "结构属性预览",
-        "attribute": "属性"
+        "attribute": "属性",
+        "definition-id": "定义ID",
+        "type": "类型"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -57,7 +59,8 @@
         "new-support-revocation": "支持撤销",
         "new-revocation-registry-size": "撤销登记处大小",
         "new-tag": "标签",
-        "new-create-definition": "新建凭证定义"
+        "new-create-definition": "新建凭证定义",
+        "new-definition-generated": "一个新的凭证定义已经生成"
     },
     "connection": {
         "new-invitation": "新建邀请",

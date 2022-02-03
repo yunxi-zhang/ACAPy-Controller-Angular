@@ -39,7 +39,9 @@
         "schema-name": "Schema Name",
         "schema-version": "Schema Version",
         "schema-attribute-preview": "Schema Attributes Preview",
-        "attribute": "Attribute"
+        "attribute": "Attribute",
+        "definition-id": "Definition ID",
+        "type": "Type"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -57,7 +59,9 @@
         "new-support-revocation": "Support Revocation",
         "new-revocation-registry-size": "Revocation Registry Size",
         "new-tag": "Tag",
-        "new-create-definition": "Create New Definition"
+        "new-create-definition": "Create New Definition",
+        "new-definition-generated": "A new credential definition is generated as shown below",
+        "created-definition-view-details": "Click on the Definition ID to view details"
     },
     "connection": {
         "new-invitation": "Create New Invitation",
