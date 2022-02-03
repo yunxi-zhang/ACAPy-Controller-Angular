@@ -60,7 +60,8 @@
         "new-revocation-registry-size": "撤销登记处大小",
         "new-tag": "标签",
         "new-create-definition": "新建凭证定义",
-        "new-definition-generated": "一个新的凭证定义已经生成"
+        "new-definition-generated": "一个新的凭证定义已经生成",
+        "created-definition-view-details": "点击定义ID查看更多信息"
     },
     "connection": {
         "new-invitation": "新建邀请",
