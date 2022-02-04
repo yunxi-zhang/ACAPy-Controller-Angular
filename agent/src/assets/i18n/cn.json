@@ -40,6 +40,8 @@
         "schema-version": "结构版本",
         "schema-attribute-preview": "结构属性预览",
         "attribute": "属性",
+        "attribute-name": "属性名称",
+        "attribute-value": "属性值",
         "definition-id": "定义ID",
         "type": "类型",
         "credential-exchange-id": "凭证交换ID",
