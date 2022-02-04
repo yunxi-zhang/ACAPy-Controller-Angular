@@ -41,7 +41,9 @@
         "schema-attribute-preview": "结构属性预览",
         "attribute": "属性",
         "definition-id": "定义ID",
-        "type": "类型"
+        "type": "类型",
+        "credential-exchange-id": "凭证交换ID",
+        "credential-preview": "凭证预览"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -81,7 +83,11 @@
     "credential-request": {
         "new-search-schema": "搜索颁发人的凭证结构信息",
         "new-credential-proposal-request": "新凭证提议请求",
-        "new-create-credential-proposal-request": "新建凭证提议请求"
+        "new-create-credential-proposal-request": "新建凭证提议请求",
+        "new-credential-proposal-generated": "一个新的凭证请求已经生成",
+        "sent-on": "请求发送于",
+        "request-state": "请求状态",
+        "request-comment": "请求评论"
     },
     "credential": {
         "revoke-credential-exchange-id": "凭证交换ID",
