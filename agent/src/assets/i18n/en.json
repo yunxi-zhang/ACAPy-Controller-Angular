@@ -34,7 +34,7 @@
         "search-did": "Search Issuer's Created Schemas by a Pubilc DID",
         "revoke": "Revoke",
         "connection-id": "Connection ID",
-        "comment": "Comment",
+        "comment": " Comment",
         "schema-id": "Schema ID",
         "schema-name": "Schema Name",
         "schema-version": "Schema Version",
@@ -45,7 +45,14 @@
         "definition-id": "Definition ID",
         "type": "Type",
         "credential-exchange-id": "Credential Exchange ID",
-        "credential-preview": "Credential Preview"
+        "credential-preview": "Credential Preview",
+        "state": "State",
+        "updated-on": "Last updated on",
+        "approve": "Approve",
+        "credential-request": "Credential Request",
+        "success": " is successful",
+        "failure": " is failed",
+        "credential-issuance": "Credential Issuance"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -93,7 +100,8 @@
     },
     "credential": {
         "revoke-credential-exchange-id": "Credential Exchange ID",
-        "validity-revocation-status": "Revocation Status"
+        "validity-revocation-status": "Revocation Status",
+        "issue": "Issue Credential"
     },
     "proof": {
         "new-new-proof": "Create a new proof",

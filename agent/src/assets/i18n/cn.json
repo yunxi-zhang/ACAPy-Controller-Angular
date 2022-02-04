@@ -45,7 +45,14 @@
         "definition-id": "定义ID",
         "type": "类型",
         "credential-exchange-id": "凭证交换ID",
-        "credential-preview": "凭证预览"
+        "credential-preview": "凭证预览",
+        "state": "状态",
+        "updated-on": "最后更新于",
+        "approve": "批准",
+        "credential-request": "凭证请求",
+        "success": "成功",
+        "failure": "失败",
+        "credential-issuance": "凭证发放"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -93,7 +100,8 @@
     },
     "credential": {
         "revoke-credential-exchange-id": "凭证交换ID",
-        "validity-revocation-status": "撤销状态"
+        "validity-revocation-status": "撤销状态",
+        "issue": "发放凭证"
     },
     "proof": {
         "new-new-proof": "新建证明",
