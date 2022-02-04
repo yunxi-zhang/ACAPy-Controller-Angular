@@ -1,6 +1,6 @@
 {
     "header": {
-        "issuer": "颁发人",
+        "issuer": "发放人",
         "holder": "持有人",
         "verifier": "核实人"
     },
@@ -23,7 +23,7 @@
         "accept": "接受",
         "requested": "已请求",
         "received": "已接受",
-        "issued": "已颁发",
+        "issued": "已发放",
         "revoke": "撤销",
         "validity": "有效性"
     },
@@ -31,7 +31,7 @@
         "empty-result": "看来这里什么也没有!",
         "search-result": "搜索结果",
         "search": "搜索",
-        "search-did": "搜索颁发人创建的公共DID",
+        "search-did": "搜索发放人创建的公共DID",
         "revoke": "撤销",
         "connection-id": "连接ID",
         "comment": "评论",
@@ -48,7 +48,7 @@
         "credential-preview": "凭证预览",
         "state": "状态",
         "updated-on": "最后更新于",
-        "approve": "批准",
+        "approve": "同意",
         "credential-request": "凭证请求",
         "success": "成功",
         "failure": "失败",
@@ -90,7 +90,7 @@
         "shared-invitation-mode": "邀请模式"
     },
     "credential-request": {
-        "new-search-schema": "搜索颁发人的凭证结构信息",
+        "new-search-schema": "搜索发放人的凭证结构信息",
         "new-credential-proposal-request": "新凭证提议请求",
         "new-create-credential-proposal-request": "新建凭证提议请求",
         "new-credential-proposal-generated": "一个新的凭证请求已经生成",
