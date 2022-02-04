@@ -65,9 +65,18 @@
     },
     "connection": {
         "new-invitation": "新建邀请",
+        "new-copy-invitation-object": "复制以下邀请对象",
+        "new-copy-invitation-url": "或者复制以下邀请URL",
         "accept-invitation-block": "粘贴邀请对象代码",
         "accept-invitation-url": "或者粘贴邀请链接",
-        "accept-invitation": "接受邀请"
+        "accept-invitation": "接受邀请",
+        "received-on": "收到邀请于",
+        "created-on": "新建邀请于",
+        "updated-on": "最后更新于",
+        "shared-counterparty-name": "对方名称",
+        "shared-counterparty-did": "对方DID",
+        "shared-connection-state": "连接状态",
+        "shared-invitation-mode": "邀请模式"
     },
     "credential-request": {
         "new-search-schema": "搜索颁发人的凭证结构信息",

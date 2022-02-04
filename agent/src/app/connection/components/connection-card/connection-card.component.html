@@ -3,13 +3,13 @@
         <ng-container *ngIf="connection?.state === 'active';else invitation">
             <div class="card-title">
                 <small>
-                    <span>Invitation received on &nbsp;</span>
+                    <span>{{ 'connection.received-message' | translate }} &nbsp;</span>
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Connection ID:</small>&nbsp;
+                    <small class="text-muted">{{ 'shared.connection-id' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.connection_id }}</span>
             </div>
@@ -17,25 +17,25 @@
                 <span>
                     <small *ngIf="connection?.initiator === 'self'" class="text-muted">To:&nbsp;</small>
                     <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
-                    <small class="text-muted">Counterparty's Name:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-counterparty-name' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_label }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Counterparty's DID:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-counterparty-did' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_did }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Connection State:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-connection-state' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.state | titlecase }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Invitation Mode:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-invitation-mode' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.invitation_mode | titlecase  }}</span>
             </div>
@@ -43,13 +43,13 @@
         <ng-template #invitation>
             <div class="card-title">
                 <small>
-                    <span>Invitation created on</span>&nbsp;
+                    <span>{{ 'connection.created-on' | translate }}</span>&nbsp;
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Connection ID:</small>&nbsp;
+                    <small class="text-muted">{{ 'shared.connection-id' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.connection_id }}</span>
             </div>
@@ -57,25 +57,25 @@
                 <span>
                     <small *ngIf="connection?.initiator === 'self'" class="text-muted">To:&nbsp;</small>
                     <small *ngIf="connection?.initiator === 'external'" class="text-muted">From:&nbsp;</small>
-                    <small class="text-muted">Counterparty's Name:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-counterparty-name' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_label || 'N/A' }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Counterparty's DID:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-counterparty-did' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.their_did || 'N/A' }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Connection State:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-connection-state' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.state | titlecase  }}</span>
             </div>
             <div class="card-text">
                 <span>
-                    <small class="text-muted">Invitation Mode:</small>&nbsp;
+                    <small class="text-muted">{{ 'connection.shared-invitation-mode' | translate }}:</small>&nbsp;
                 </span>
                 <span>{{ connection?.invitation_mode | titlecase }}</span>
             </div>

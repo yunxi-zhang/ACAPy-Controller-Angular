@@ -65,9 +65,18 @@
     },
     "connection": {
         "new-invitation": "Create New Invitation",
+        "new-copy-invitation-object": "Copy the following invitation object",
+        "new-copy-invitation-url": "Alternatively copy the following invitation URL",
         "accept-invitation-block": "Paste invitation object block",
         "accept-invitation-url": "Alternatively paste an invitation URL",
-        "accept-invitation": "Accept Invitation"
+        "accept-invitation": "Accept Invitation",
+        "received-on": "Invitation received on",
+        "created-on": "Invitation created on",
+        "updated-on": "Last updated on",
+        "shared-counterparty-name": "Counterparty's Name",
+        "shared-counterparty-did": "Counterparty's DID",
+        "shared-connection-state": "Connection State",
+        "shared-invitation-mode": "Invitation Mode"
     },
     "credential-request": {
         "new-search-schema": "Search Issuer's Credential Schema Information",

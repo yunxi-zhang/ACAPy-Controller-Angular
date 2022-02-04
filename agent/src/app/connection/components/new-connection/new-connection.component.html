@@ -7,7 +7,7 @@
     <div *ngIf="invitation" class="row">
         <div class="col-12">
             <div class="form-group">
-                <label>Copy the following invitation object:</label>
+                <label>{{ 'connection.new-copy-invitation-object' | translate }}:</label>
                 <div class="input-group">
                     <textarea class="form-control" cols="30" rows="10" [value]="invitationObject" #invitationObjectEl
                         readonly></textarea>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Alternatively copy the following invitation URL:</label>
+                <label>{{ 'connection.new-copy-invitation-url' | translate }}:</label>
                 <div class="input-group">
                     <input type="text" class="form-control" [value]="invitationUrl" #invitationUrlEl readonly>
                     <div class="input-group-append">
