@@ -40,8 +40,12 @@
         "schema-version": "Schema Version",
         "schema-attribute-preview": "Schema Attributes Preview",
         "attribute": "Attribute",
+        "attribute-name": "Attribute Name",
+        "attribute-value": "Attribute Value",
         "definition-id": "Definition ID",
-        "type": "Type"
+        "type": "Type",
+        "credential-exchange-id": "Credential Exchange ID",
+        "credential-preview": "Credential Preview"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -81,7 +85,11 @@
     "credential-request": {
         "new-search-schema": "Search Issuer's Credential Schema Information",
         "new-credential-proposal-request": "New Credential Proposal Request",
-        "new-create-credential-proposal-request": "Create New Credential Proposal Request"
+        "new-create-credential-proposal-request": "Create New Credential Proposal Request",
+        "new-credential-proposal-generated": "A new credential request is generated as shown below",
+        "sent-on": "Request sent on",
+        "request-state": "Request State",
+        "request-comment": "Request Comment"
     },
     "credential": {
         "revoke-credential-exchange-id": "Credential Exchange ID",
