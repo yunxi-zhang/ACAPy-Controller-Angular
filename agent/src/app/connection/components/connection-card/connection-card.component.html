@@ -3,7 +3,7 @@
         <ng-container *ngIf="connection?.state === 'active';else invitation">
             <div class="card-title">
                 <small>
-                    <span>{{ 'connection.received-message' | translate }} &nbsp;</span>
+                    <span>{{ 'connection.received-on' | translate }} &nbsp;</span>
                 </small>
                 <small class="text-muted">{{ connection?.created_at | toDate | date:'medium' }}</small>
             </div>
