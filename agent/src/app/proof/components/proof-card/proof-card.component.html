@@ -7,56 +7,56 @@
                     }})</span>
             </h5>
             <small>
-                <span *ngIf="proof?.initiator === 'self'">Sent&nbsp;</span>
-                <span *ngIf="proof?.initiator === 'external'">Received&nbsp;</span>
+                <span *ngIf="proof?.initiator === 'self'">{{ 'shared.sent-on' | translate }}&nbsp;</span>
+                <span *ngIf="proof?.initiator === 'external'">{{ 'shared.received-on' | translate }}&nbsp;</span>
             </small>
             <small class="text-muted">{{ proof?.created_at | toDate | date:'medium' }}</small>
         </div>
         <div class="card-text">
             <div>
-                <b>Verification State:</b>
+                <b>{{ 'proof.verification-state' | translate }}:</b>
                 <p [ngStyle]="{'color': proof.state === 'verified' ? 'green' : 'olive'}">{{ proof?.state | titlecase}}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <b>Verification Result:</b>
+                <b>{{ 'proof.verification-result' | translate }}:</b>
                 <p [ngStyle]="{'color': proof.verified === 'No Result' ? 'olive' : (proof.verified === 'failed') ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Presentation Exchange ID:&nbsp;</small>
+                <small class="text-muted">{{ 'shared.presentation-exchange-id' | translate }}:&nbsp;</small>
                 <p>{{ proof?.presentation_exchange_id }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Connection ID:&nbsp;</small>
+                <small class="text-muted">{{ 'shared.connection-id' | translate }}:&nbsp;</small>
                 <p>{{ proof?.connection_id }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">My Role:&nbsp;</small>
+                <small class="text-muted">{{ 'shared.my-role' | translate }}:&nbsp;</small>
                 <p>{{ proof?.role }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Comment:&nbsp;</small>
+                <small class="text-muted">{{ 'shared.comment' | translate }}:&nbsp;</small>
                 <p>{{ proof?.presentation_request_dict?.comment }}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Requested Attributes:&nbsp;</small>
+                <small class="text-muted">{{ 'proof.new-requested-attribute-names' | translate }}:&nbsp;</small>
                 <p *ngFor="let key of attributeKeys; let i = index">
                     {{ attributeKeys[i] }}: {{ attributeValues[i]?.name }}
                 </p>
                 <ng-container *ngIf="proof?.state === 'request_received'">
                     <div>
-                        <small>Choose a credential that have the requsted attributes:&nbsp;</small>
+                        <small>{{ 'proof.requested-choose-credential-attributes' | translate }}:&nbsp;</small>
                     </div>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]="credential">
                         <ng-container *ngFor="let credential of credentials;">
@@ -68,14 +68,14 @@
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Requested Predicates:&nbsp;</small>
+                <small class="text-muted">{{ 'proof.new-requested-predicates' | translate }}:&nbsp;</small>
                 <p *ngFor="let key of predicateKeys; let i = index">
                     {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }} {{ predicateValues[i]?.p_type }} {{
                     predicateValues[i]?.p_value }}
                 </p>
                 <ng-container *ngIf="proof?.state === 'request_received'">
                     <div>
-                        <small>Choose a credential that fulfils the predicates:&nbsp;</small>
+                        <small>{{ 'proof.requested-choose-credential-predicates' | translate }}:&nbsp;</small>
                     </div>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]="predCredential">
                         <ng-container *ngFor="let predCredential of credentials;">
@@ -87,36 +87,35 @@
         </div>
         <div class="card-text">
             <div>
-                <small class="text-muted">Not Expired Until:&nbsp;</small>
+                <small class="text-muted">{{ 'proof.not-expired-until' | translate }}:&nbsp;</small>
                 <p>{{ proofValidUntil }}</p>
             </div>
         </div>
         <ng-container *ngIf="proof?.state === 'request_received'">
-            <button type="button" class="btn btn-primary" (click)="onSubmitPresentation()" style="width: 11rem;">Submit
-                Proof</button>
+            <button type="button" class="btn btn-primary" (click)="onSubmitPresentation()" style="width: 11rem;">{{ 'proof.requested-submit-proof' | translate }}</button>
             <br />
             <ng-container *ngIf="presentationResult === 'success'">
-                <span class="badge badge-success">Proof presentation is successful</span>
+                <span class="badge badge-success">{{ 'shared.proof-presentation' | translate }}{{ 'shared.success' | translate }}</span>
             </ng-container>
             <ng-container *ngIf="presentationResult === 'failed'">
-                <span class="badge badge-danger">Proof presentation is failed</span>
+                <span class="badge badge-danger">{{ 'shared.proof-presentation' | translate }}{{ 'shared.failure' | translate }}</span>
             </ng-container>
         </ng-container>
         <ng-container *ngIf="proof?.state === 'presentation_received'">
             <button type="button" class="btn btn-primary" (click)="onSubmitProofVerification()"
-                style="width: 11rem;">Verify Proof</button>
+                style="width: 11rem;">{{ 'proof.requested-verify-proof' | translate }}</button>
                 <br />
             <ng-container *ngIf="proofVerificationResult === 'success'">
-                <span class="badge badge-success">Proof verificiation is successful</span>
+                <span class="badge badge-success">{{ 'shared.proof-verification' | translate }}{{ 'shared.success' | translate }}</span>
             </ng-container>
             <ng-container *ngIf="proofVerificationResult === 'failed'">
-                <span class="badge badge-danger">Proof verification is failed</span>
+                <span class="badge badge-danger">{{ 'shared.proof-verification' | translate }}{{ 'shared.success' | translate }}</span>
             </ng-container>
         </ng-container>
     </div>
     <div class="card-footer">
         <p class="card-text">
-            <small class="text-muted">Updated at {{ proof?.updated_at | toDate | date:'medium' }}</small>
+            <small class="text-muted">{{ 'shared.updated-on' | translate }} {{ proof?.updated_at | toDate | date:'medium' }}</small>
         </p>
     </div>
 </div>

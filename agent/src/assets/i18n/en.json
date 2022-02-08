@@ -58,7 +58,11 @@
         "issued-on": "Issued on",
         "credential-revocation": "Credential Revocation",
         "presentation-exchange-id": "Presentation Exchange ID",
-        "my-role": "My Role"
+        "my-role": "My Role",
+        "sent-on": "Sent on",
+        "received-on": "Received on",
+        "proof-presentation": "Proof presentation",
+        "proof-verification": "Proof verification" 
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -124,6 +128,12 @@
         "new-add-another-predicate": "Add another predicate +",
         "new-create-new-proof": "Create New Proof",
         "new-proof-request-generated": "A new proof request is generated as shown below",
-        "not-expired-until": "Not Expired Until"
+        "not-expired-until": "Not Expired Until",
+        "requested-verification-state": "Verification State",
+        "requested-verification-result": "Verification Result",
+        "requested-submit-proof": "Submit Proof",
+        "requested-verify-proof": "Verify Proof",
+        "requested-choose-credential-attributes": "Choose a credential that fulfils the attributes",
+        "requested-choose-credential-predicates": "Choose a credential that fulfils the predicates"
     }
 }

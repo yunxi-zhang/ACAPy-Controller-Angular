@@ -58,7 +58,11 @@
         "issued-on": "发放于",
         "credential-revocation": "凭证撤销",
         "presentation-exchange-id": "证明交换ID",
-        "my-role": "我的角色"
+        "my-role": "我的角色",
+        "sent-on": "发送于",
+        "received-on": "接受于",
+        "proof-presentation": "证明显示",
+        "proof-verification": "证明校验"  
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -124,6 +128,12 @@
         "new-add-another-predicate": "添加新谓词+",
         "new-create-new-proof": "新建证明",
         "new-proof-request-generated": "一个新的证明已经生成",
-        "not-expired-until": "没有到期"
+        "not-expired-until": "没有到期",
+        "requested-verification-state": "校验状态",
+        "requested-verification-result": "校验结果",
+        "requested-submit-proof": "提交证明",
+        "requested-verify-proof": "校验证明",
+        "requested-choose-credential-attributes": "选择一个凭证可以符合属性要求",
+        "requested-choose-credential-predicates": "选择一个凭证可以符合谓词要求"
     }
 }
