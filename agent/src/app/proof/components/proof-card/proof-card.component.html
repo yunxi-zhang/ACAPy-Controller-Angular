@@ -14,13 +14,13 @@
         </div>
         <div class="card-text">
             <div>
-                <b>{{ 'proof.verification-state' | translate }}:</b>
+                <b>{{ 'proof.requested-verification-state' | translate }}:</b>
                 <p [ngStyle]="{'color': proof.state === 'verified' ? 'green' : 'olive'}">{{ proof?.state | titlecase}}</p>
             </div>
         </div>
         <div class="card-text">
             <div>
-                <b>{{ 'proof.verification-result' | translate }}:</b>
+                <b>{{ 'proof.requested-verification-result' | translate }}:</b>
                 <p [ngStyle]="{'color': proof.verified === 'No Result' ? 'olive' : (proof.verified === 'failed') ? 'red' : 'green'}">{{ proof?.verified | titlecase }}</p>
             </div>
         </div>
