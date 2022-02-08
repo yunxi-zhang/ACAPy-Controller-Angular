@@ -1,6 +1,9 @@
 ## Repo Description
 This repo is mainly used to run as 3 frontend controller apps that each connects to a local Hyperledger ACA-Py agent as an issuer, holder and verifier respectively. It's built upon the alice-controller Angular app in [Hyperledger's aries-acapy-controllers repo](https://github.com/hyperledger/aries-acapy-controllers/tree/main/AliceFaberAcmeDemo/controllers).
 
+## Bilanguage Support
+The apps in this repo supports both English and Simplified Chinese (简体中文).
+
 ## Prerequisites
 1. OS: MacOS 11.6.1 (properly tested) or Unix/Linux(not properly tested yet).
 2. Node version: 14.18.1.
