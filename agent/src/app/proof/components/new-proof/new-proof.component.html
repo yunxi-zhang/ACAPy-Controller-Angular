@@ -93,42 +93,42 @@
     <div *ngIf="proofRequest" class="row">
         <div class="col-12">
             <div class="form-group">
-                <label>{{ 'proof.new-proof-request-generated' | tranlsate }}:</label>
+                <label>{{ 'proof.new-proof-request-generated' | translate }}:</label>
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'shared.presentation-exchange-id' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'shared.presentation-exchange-id' | translate }}:&nbsp;</small>
                                 <p>{{ proofRequest?.presentation_exchange_id }}</p>
                             </div>
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'shared.connection-id' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'shared.connection-id' | translate }}:&nbsp;</small>
                                 <p>{{ proofRequest?.connection_id }}</p>
                             </div>
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'shared.state' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'shared.state' | translate }}:&nbsp;</small>
                                 <p>{{ proofRequest?.state }}</p>
                             </div>
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'shared.my-role' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'shared.my-role' | translate }}:&nbsp;</small>
                                 <p>{{ proofRequest?.role }}</p>
                             </div>
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'shared.comment' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'shared.comment' | translate }}:&nbsp;</small>
                                 <p>{{ proofRequest?.presentation_request_dict?.comment }}</p>
                             </div>
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'proof.new-requested-attribute-names' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'proof.new-requested-attribute-names' | translate }}:&nbsp;</small>
                                 <p *ngFor="let key of attributeKeys; let i = index">
                                     {{ attributeKeys[i] }}: {{ attributeValues[i]?.name }}
                                 </p>
@@ -136,7 +136,7 @@
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'proof.new-requested-predicates' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'proof.new-requested-predicates' | translate }}:&nbsp;</small>
                                 <p *ngFor="let key of predicateKeys; let i = index">
                                     {{ predicateKeys[i] }}: {{ predicateValues[i]?.name }} {{ predicateValues[i]?.p_type
                                     }} {{ predicateValues[i]?.p_value }}
@@ -145,7 +145,7 @@
                         </div>
                         <div class="card-text">
                             <div>
-                                <small class="text-muted">{{ 'proof.not-expired-until' | tranlsate }}:&nbsp;</small>
+                                <small class="text-muted">{{ 'proof.not-expired-until' | translate }}:&nbsp;</small>
                                 <p>{{ proofValidUntil }}</p>
                             </div>
                         </div> 
