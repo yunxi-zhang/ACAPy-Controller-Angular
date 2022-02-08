@@ -56,7 +56,9 @@
         "credential-id": "Credential ID",
         "credential-attributes": "Credential Attributes",
         "issued-on": "Issued on",
-        "credential-revocation": "Credential Revocation"
+        "credential-revocation": "Credential Revocation",
+        "presentation-exchange-id": "Presentation Exchange ID",
+        "my-role": "My Role"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -120,6 +122,8 @@
         "new-predicate" : "Predicate",
         "new-space": "MUST have a space in between (e.g. DOB SPACE <= SPACE 2000)",
         "new-add-another-predicate": "Add another predicate +",
-        "new-create-new-proof": "Create New Proof"
+        "new-create-new-proof": "Create New Proof",
+        "new-proof-request-generated": "A new proof request is generated as shown below",
+        "not-expired-until": "Not Expired Until"
     }
 }

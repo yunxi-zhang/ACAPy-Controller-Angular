@@ -56,7 +56,9 @@
         "credential-id": "凭证ID",
         "credential-attributes": "凭证属性",
         "issued-on": "发放于",
-        "credential-revocation": "凭证撤销"
+        "credential-revocation": "凭证撤销",
+        "presentation-exchange-id": "证明交换ID",
+        "my-role": "我的角色"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -119,6 +121,9 @@
         "new-requested-predicates": "所需谓词",
         "new-predicate" : "谓词",
         "new-space": "谓词之间必须有空格M(比如:DOB SPACE <= SPACE 2000)",
-        "new-add-another-predicate": "添加新谓词"
+        "new-add-another-predicate": "添加新谓词+",
+        "new-create-new-proof": "新建证明",
+        "new-proof-request-generated": "一个新的证明已经生成",
+        "not-expired-until": "没有到期"
     }
 }
