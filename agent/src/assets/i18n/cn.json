@@ -52,7 +52,10 @@
         "credential-request": "凭证请求",
         "success": "成功",
         "failure": "失败",
-        "credential-issuance": "凭证发放"
+        "credential-issuance": "凭证发放",
+        "credential-id": "凭证ID",
+        "credential-attributes": "凭证属性",
+        "issued-on": "发放于"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
@@ -101,7 +104,9 @@
     "credential": {
         "revoke-credential-exchange-id": "凭证交换ID",
         "validity-revocation-status": "撤销状态",
-        "issue": "发放凭证"
+        "issue": "发放凭证",
+        "issued-store-to-wallet": "存入钱包",
+        "issued-store-credential-to-wallet": "存放凭证入钱包"
     },
     "proof": {
         "new-new-proof": "新建证明",

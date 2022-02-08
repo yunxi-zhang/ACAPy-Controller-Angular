@@ -52,7 +52,10 @@
         "credential-request": "Credential Request",
         "success": " is successful",
         "failure": " is failed",
-        "credential-issuance": "Credential Issuance"
+        "credential-issuance": "Credential Issuance",
+        "credential-id": "Credential ID",
+        "credential-attributes": "Credential Attributes",
+        "issued-on": "Issued on"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
@@ -101,7 +104,9 @@
     "credential": {
         "revoke-credential-exchange-id": "Credential Exchange ID",
         "validity-revocation-status": "Revocation Status",
-        "issue": "Issue Credential"
+        "issue": "Issue Credential",
+        "issued-store-to-wallet": "Store to Wallet",
+        "issued-store-credential-to-wallet": "Store credential to a wallet"
     },
     "proof": {
         "new-new-proof": "Create a new proof",
