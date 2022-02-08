@@ -55,7 +55,8 @@
         "credential-issuance": "Credential Issuance",
         "credential-id": "Credential ID",
         "credential-attributes": "Credential Attributes",
-        "issued-on": "Issued on"
+        "issued-on": "Issued on",
+        "credential-revocation": "Credential Revocation"
     },
     "schema": {
         "new-type-in": "Please type in infomration for a new schmea",
