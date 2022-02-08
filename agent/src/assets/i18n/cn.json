@@ -55,7 +55,8 @@
         "credential-issuance": "凭证发放",
         "credential-id": "凭证ID",
         "credential-attributes": "凭证属性",
-        "issued-on": "发放于"
+        "issued-on": "发放于",
+        "credential-revocation": "凭证撤销"
     },
     "schema": {
         "new-type-in": "请输入新凭证结构的信息",
