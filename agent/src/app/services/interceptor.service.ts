@@ -4,6 +4,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 import { Observable } from 'rxjs';
 import { SpinnerService } from './spinner.service';
 import { finalize } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,9 @@ export class InterceptorService implements HttpInterceptor {
   formattedAgentUrl: string;
 
   constructor(private spinner: SpinnerService) {
-    this.hostname = $ENV.AGENT_HOST || 'localhost';
-    this.port = $ENV.AGENT_PORT === 'pwd' ? '' : ':7001';
-    this.formattedAgentUrl = `http://${this.hostname}` + this.port;
+    this.hostname = environment.ip;
+    this.port =  environment.issuerPort;
+    this.formattedAgentUrl = `http://${this.hostname}` + ":" + this.port;
     console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
   }
 
