@@ -22,6 +22,8 @@ steps:
     ng build --configuration production
     echo "where am i"
     pwd
+    echo "test directory"
+    echo $(Build.ArtifactStagingDirectory)
     echo "list files"
     ls -al
   displayName: 'npm install and build'
