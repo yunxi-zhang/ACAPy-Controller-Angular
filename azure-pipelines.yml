@@ -23,12 +23,10 @@ steps:
     echo "where am i"
     pwd
     echo "test directory"
-    echo $(Build.ArtifactStagingDirectory)
-    echo "2nd directory"
-    echo $(Pipeline.Workspace)
+    echo $(System.DefaultWorkingDirectory)
     echo "list files"
     ls -al
   displayName: 'npm install and build'
 
-- publish: dist
-  artifact: $(Pipeline.Workspace)/dist
+- publish: $(System.DefaultWorkingDirectory)/dist
+  artifact: dist
