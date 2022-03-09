@@ -20,6 +20,10 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --configuration production
+    echo "where am i"
+    pwd
+    echo "list files"
+    ls -al
   displayName: 'npm install and build'
 
 - publish: dist
