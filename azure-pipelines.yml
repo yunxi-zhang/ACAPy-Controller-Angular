@@ -28,5 +28,5 @@ steps:
     ls -al
   displayName: 'npm install and build'
 
-- publish: $(System.DefaultWorkingDirectory)/dist
+- publish: $(System.DefaultWorkingDirectory)/agent/dist
   artifact: dist
