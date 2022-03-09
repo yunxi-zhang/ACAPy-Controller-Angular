@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  - group: ACAPy-Issuer-Frontend
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -20,12 +23,6 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --configuration production
-    echo "where am i"
-    pwd
-    echo "test directory"
-    echo $(System.DefaultWorkingDirectory)
-    echo "list files"
-    ls -al
   displayName: 'npm install and build'
 
 - publish: $(System.DefaultWorkingDirectory)/agent/dist
