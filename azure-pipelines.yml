@@ -27,7 +27,7 @@ steps:
 
 - task: replacetokens@3
   inputs:
-    targetFiles: $(Pipeline.Workspace)/dist/**/main*.js
+    targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
     tokenPrefix: '#{'
     tokenSuffix: '}#'
 
