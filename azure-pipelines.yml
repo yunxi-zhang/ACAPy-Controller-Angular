@@ -22,8 +22,14 @@ steps:
     cd ./agent
     npm install -g @angular/cli
     npm install
-    ng build --configuration production
+    ng build --configuration=production
   displayName: 'npm install and build'
+
+- task: replacetokens@3
+  inputs:
+    targetFiles: $(Pipeline.Workspace)/dist/**/main*.js
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
 
 - publish: $(System.DefaultWorkingDirectory)/agent/dist
   artifact: dist

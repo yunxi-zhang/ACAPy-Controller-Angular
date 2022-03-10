@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  ip: '',
-  issuerPort: "",
-  holderPort: "",
-  verifierPort: ""
+  ip: "#{ip}#",
+  issuerPort: "#{issuerPort}#",
+  holderPort: "#{holderPort}#",
+  verifierPort: "#{verifierPort}#"
 };
