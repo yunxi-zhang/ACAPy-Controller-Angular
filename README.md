@@ -21,6 +21,7 @@ The Web UI of the apps in this repo supports both English and Simplified Chinese
 |__ <b>agent-specifc</b>: This folder contains some frontend pages customised for an holder and a verifier.
 |__ <b>agent</b>: This folder contains all the frontend app files.
 |__ <b>images</b>: This folder contains images of user guidance in the README file.
+|__ <b>azure-pipelines.yml</b>: This is the pipeline file used in Azure DevOps pipelines. It's currently being tested for my own private Cloud environment. A user runs this repo in a local machine can quickly ignore it.
 |__ <b>common.sh</b>: This shell script defines the styling of information printed out. It is used by other shell script files.
 |__ <b>setup-agent.sh</b>: This shell script will auto create 3 frontend apps for an issuer, a holder and a verifier respectively.
 </pre>
