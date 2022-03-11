@@ -12,24 +12,28 @@ pool:
 variables:
   - group: ACAPy-Issuer-Frontend
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '14.18.1'
-  displayName: 'Install Node.js'
+jobs:
+- job: Prepare_Environment
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.18.1'
+    displayName: 'Install Node.js'
 
-- script: |
-    cd ./agent
-    npm install -g @angular/cli
-    npm install
-    ng build --configuration=production
-  displayName: 'npm install and build'
+- job: Build_Issuer
+  steps:
+  - script: |
+      cd ./agent
+      npm install -g @angular/cli
+      npm install
+      ng build --configuration=production
+    displayName: 'npm install and build'
 
-- task: replacetokens@3
-  inputs:
-    targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
-    tokenPrefix: '#{'
-    tokenSuffix: '}#'
+  - task: replacetokens@3
+    inputs:
+      targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
 
-- publish: $(System.DefaultWorkingDirectory)/agent/dist
-  artifact: dist
+  - publish: $(System.DefaultWorkingDirectory)/agent/dist
+    artifact: dist
