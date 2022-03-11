@@ -17,7 +17,7 @@ export class InterceptorService implements HttpInterceptor {
   constructor(private spinner: SpinnerService) {
     this.hostname = environment.ip;
     this.port =  environment.verifierPort;
-    this.formattedAgentUrl = `http://${this.hostname}` + this.port;
+    this.formattedAgentUrl = `http://${this.hostname}` + ":" +this.port;
     console.log('Verifier agent is running on: ' + this.formattedAgentUrl);
   }
 

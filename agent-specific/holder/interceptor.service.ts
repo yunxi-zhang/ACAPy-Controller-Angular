@@ -17,7 +17,7 @@ export class InterceptorService implements HttpInterceptor {
   constructor(private spinner: SpinnerService) {
     this.hostname = environment.ip;
     this.port =  environment.holderPort;
-    this.formattedAgentUrl = `http://${this.hostname}` + this.port;
+    this.formattedAgentUrl = `http://${this.hostname}` + ":" + this.port;
     console.log('Holder agent is running on: ' + this.formattedAgentUrl);
   }
 
