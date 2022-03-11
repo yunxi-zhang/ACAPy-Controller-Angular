@@ -48,8 +48,6 @@ jobs:
       cp ./agent-specific/holder/nav.component.html ./agent/src/app/components/nav/nav.component.html 
       cp ./agent-specific/holder/interceptor.service.ts ./agent/src/app/services/interceptor.service.ts
       cd ./agent
-      npm install -g @angular/cli
-      npm install
       ng build --configuration=production
     displayName: 'npm install and build'
 
