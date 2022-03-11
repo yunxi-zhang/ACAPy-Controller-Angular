@@ -64,3 +64,29 @@ jobs:
 
   - publish: $(System.DefaultWorkingDirectory)/agent/dist/holder-controller
     artifact: holder
+
+- job: Build_Verifier
+  dependsOn: Build_Verifier
+  variables:
+  - group: ACAPy-Verifier-Frontend
+  steps:
+  - script: |
+      cp ./agent-specific/verifier/index.html ./agent/src/index.html
+      cp ./agent-specific/verifier/nav.component.html ./agent/src/app/components/nav/nav.component.html 
+      cp ./agent-specific/verifier/interceptor.service.ts ./agent/src/app/services/interceptor.service.ts
+      cp ./agent-specific/verifier/angular.json ./agent/angular.json
+      cd ./agent
+      npm install -g @angular/cli
+      npm install
+      ng build --configuration=production
+    displayName: 'Build Verifier Artifact'
+
+  - task: replacetokens@3
+    inputs:
+      targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
+    displayName: 'Replace Environment Variables'
+
+  - publish: $(System.DefaultWorkingDirectory)/agent/dist/verifier-controller
+    artifact: verifier
