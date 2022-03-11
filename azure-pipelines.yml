@@ -66,7 +66,7 @@ jobs:
     artifact: holder
 
 - job: Build_Verifier
-  dependsOn: Build_Verifier
+  dependsOn: Build_Holder
   variables:
   - group: ACAPy-Verifier-Frontend
   steps:
