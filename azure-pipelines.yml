@@ -9,8 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  - group: ACAPy-Issuer-Frontend
+
 
 jobs:
 - job: Prepare_Environment
@@ -21,6 +20,8 @@ jobs:
     displayName: 'Install Node.js'
 
 - job: Build_Issuer
+  variables:
+  - group: ACAPy-Issuer-Frontend
   steps:
   - script: |
       cd ./agent
@@ -35,5 +36,28 @@ jobs:
       tokenPrefix: '#{'
       tokenSuffix: '}#'
 
-  - publish: $(System.DefaultWorkingDirectory)/agent/dist
-    artifact: dist
+  - publish: $(System.DefaultWorkingDirectory)/agent/issuer_dist
+    artifact: issuer_dist
+
+- job: Build_Holder
+  variables:
+  - group: ACAPy-Holder-Frontend
+  steps:
+  - script: |
+      cp ./agent-specific/holder/index.html ./agent/src/index.html
+      cp ./agent-specific/holder/nav.component.html ./agent/src/app/components/nav/nav.component.html 
+      cp ./agent-specific/holder/interceptor.service.ts ./agent/src/app/services/interceptor.service.ts
+      cd ./agent
+      npm install -g @angular/cli
+      npm install
+      ng build --configuration=production
+    displayName: 'npm install and build'
+
+  - task: replacetokens@3
+    inputs:
+      targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
+
+  - publish: $(System.DefaultWorkingDirectory)/agent/holder_dist
+    artifact: holder_dist
