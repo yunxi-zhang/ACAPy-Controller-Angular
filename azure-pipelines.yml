@@ -36,8 +36,8 @@ jobs:
       tokenSuffix: '}#'
     displayName: 'Replace Environment Variables'
 
-  - publish: $(System.DefaultWorkingDirectory)/agent/dist
-    artifact: issuer_dist
+  - publish: $(System.DefaultWorkingDirectory)/agent/dist/issuer-controller
+    artifact: issuer
 
 - job: Build_Holder
   dependsOn: Build_Issuer
@@ -48,6 +48,7 @@ jobs:
       cp ./agent-specific/holder/index.html ./agent/src/index.html
       cp ./agent-specific/holder/nav.component.html ./agent/src/app/components/nav/nav.component.html 
       cp ./agent-specific/holder/interceptor.service.ts ./agent/src/app/services/interceptor.service.ts
+      cp ./agent-specific/holder/angular.json ./agent/angular.json
       cd ./agent
       npm install -g @angular/cli
       npm install
@@ -61,5 +62,5 @@ jobs:
       tokenSuffix: '}#'
     displayName: 'Replace Environment Variables'
 
-  - publish: $(System.DefaultWorkingDirectory)/agent/dist
-    artifact: holder_dist
+  - publish: $(System.DefaultWorkingDirectory)/agent/dist/holder-controller
+    artifact: holder
