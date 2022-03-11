@@ -20,6 +20,7 @@ jobs:
     displayName: 'Install Node.js'
 
 - job: Build_Issuer
+  dependsOn: Prepare_Environment
   variables:
   - group: ACAPy-Issuer-Frontend
   steps:
@@ -40,6 +41,7 @@ jobs:
     artifact: issuer_dist
 
 - job: Build_Holder
+  dependsOn: Build_Issuer
   variables:
   - group: ACAPy-Holder-Frontend
   steps:
