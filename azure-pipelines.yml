@@ -9,8 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-
-
 jobs:
 - job: Prepare_Environment
   steps:
@@ -29,13 +27,14 @@ jobs:
       npm install -g @angular/cli
       npm install
       ng build --configuration=production
-    displayName: 'npm install and build'
+    displayName: 'NPM Install and Build Issuer Artifact'
 
   - task: replacetokens@3
     inputs:
       targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
       tokenPrefix: '#{'
       tokenSuffix: '}#'
+    displayName: 'Replace Environment Variables'
 
   - publish: $(System.DefaultWorkingDirectory)/agent/dist
     artifact: issuer_dist
@@ -50,14 +49,17 @@ jobs:
       cp ./agent-specific/holder/nav.component.html ./agent/src/app/components/nav/nav.component.html 
       cp ./agent-specific/holder/interceptor.service.ts ./agent/src/app/services/interceptor.service.ts
       cd ./agent
+      npm install -g @angular/cli
+      npm install
       ng build --configuration=production
-    displayName: 'npm install and build'
+    displayName: 'Build Holder Artifact'
 
   - task: replacetokens@3
     inputs:
       targetFiles: $(System.DefaultWorkingDirectory)/agent/dist/**/main*.js
       tokenPrefix: '#{'
       tokenSuffix: '}#'
+    displayName: 'Replace Environment Variables'
 
   - publish: $(System.DefaultWorkingDirectory)/agent/dist
     artifact: holder_dist
