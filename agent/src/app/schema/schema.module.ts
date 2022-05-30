@@ -8,13 +8,15 @@ import { NewSchemaComponent } from './components/new-schema/new-schema.component
 import { SchemaListComponent } from './components/schema-list/schema-list.component';
 import { SchemaCardComponent } from './components/schema-card/schema-card.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { SchemaTaaComponent } from './components/schema-taa/schema-taa.component';
 
 @NgModule({
   declarations: [
     SchemaComponent,
     NewSchemaComponent,
     SchemaListComponent,
-    SchemaCardComponent
+    SchemaCardComponent,
+    SchemaTaaComponent
   ],
   imports: [
     CommonModule,

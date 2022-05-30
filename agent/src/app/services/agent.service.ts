@@ -12,6 +12,14 @@ export class AgentService {
   constructor(private http: HttpClient) { }
 
   //Call POST APIs
+  agreeTAA(payload: any): Observable<any> {
+    return this.http.post<any>('/ledger/taa/accept', payload)
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('agreeTAA', null))
+      );
+  }
+
   createSchemas(payload: any): Observable<any> {
     return this.http.post<any>('/schemas', payload)
       .pipe(

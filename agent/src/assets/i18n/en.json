@@ -18,6 +18,7 @@
     "submenu": {
         "created": "Created",
         "new": "New",
+        "taa": "Transaction Author Agreement",
         "active": "Active",
         "pending": "Pending",
         "accept": "Accept",

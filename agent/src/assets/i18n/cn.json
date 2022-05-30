@@ -18,6 +18,7 @@
     "submenu": {
         "created": "已建",
         "new": "新建",
+        "taa": "交易同意书",
         "active": "有效",
         "pending": "等待",
         "accept": "接受",
