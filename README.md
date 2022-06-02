@@ -38,6 +38,8 @@ The 3 agents will use the docker "bridge" network by default and hardcoded conta
  
 By default, the issuer uses the Sovrin's BuilderNet (a Dev Indy DLT network), so a user doesn't need to run a local Indy DLT (e.g. VON-Network) in the same local machine. However, in order to enable the credential revocation, a user still needs to run a seperate tails-file server in the same machine or somewhere else that can be accessed by the ACA-Py agents.
 
+<b>Note</b>: connecting the issuer to the Sorvin's BuilderNet requires all network traffic to be allowed to flow to the <b>Internet</b> via a specific port range:<b>9700-9799</b>. If this is not possible in the network you use, you could consider to set up a local [VON-Network](https://github.com/bcgov/von-network) in your local machine to get around it.
+
 | Agent      | Container IP | Agent Level Communication Port | Admin(REST API) Port |
 | ----------- | ----------- | ----------- | ----------- |
 | Issuer | 172.17.0.2 | 7000 | 7001 |
