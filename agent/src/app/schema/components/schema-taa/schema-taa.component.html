@@ -1,20 +1,9 @@
 <div class="card shadow-sm">
     <div class="card-body">
         <div class="card-text">
-            This summary is provided to help you understand your obligations when writing to the Sovrin
-            Ledger Networks—it does not have any legal effect or replace the full legal text of the
-            agreement provided below it.
-            <li>This agreement grants you permission to write data to the Sovrin Ledger Networks under
-                certain terms and conditions. </li>
-            <li>You represent and warrant that the data you are writing does not violate any applicable
-                laws or infringe the rights of any other party.</li>
-            <li> You understand the data you are writing is public and permanent and there can be no
-                guarantee of erasure. This includes public keys and payment addresses. </li>
-            <li>If it is determined that the data you wrote violated this agreement, the operators of the
-                network can take steps to block it from public access. </li>
-            <li> The Sovrin Foundation makes no promises about the reliability or correctness of the data
-                being stored on the Sovrin Ledger Networks or the operation of the Sovrin Ledger
-                Networks. </li>
+            <div class="alert alert-warning" role="alert">
+                If your <b>issuer acapy agent</b> is running in an <b>non-interactive</b> mode, you <b>MUST</b> click on the below <b>Accept</b> button to manually trigger the TAA for using the Sovrin BuilderNet to enable the creation of a new schema and definition.
+              </div>
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button" (click)="onAcceptTAA()"
                     class="btn btn-primary">{{
