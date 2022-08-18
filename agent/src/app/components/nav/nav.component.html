@@ -13,4 +13,6 @@
         </div>
         <div *ngSwitchDefault></div>
     </ng-container>
+    <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+    <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
 </nav>

@@ -3,6 +3,8 @@ import { AgentService } from 'src/app/services/agent.service';
 import { AgentStatus } from 'src/app/enums/agent-status.enum';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { MsalService, MsalBroadcastService, MSAL_GUARD_CONFIG, MsalGuardConfiguration } from '@azure/msal-angular';
+import { AuthenticationResult, InteractionStatus, InteractionType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +15,7 @@ export class NavComponent implements OnInit {
   agentStatus = AgentStatus;
   status = this.agentStatus.Loading;
   selectedLanguage: string;
+  loginDisplay = false;
 
   constructor(private agentService: AgentService, private translateService: TranslateService) { 
     this.translateService.addLangs(['en']);
@@ -31,4 +34,7 @@ export class NavComponent implements OnInit {
     this.translateService.use(value);
   }
 
+  login() {}
+
+  logout() {}
 }
