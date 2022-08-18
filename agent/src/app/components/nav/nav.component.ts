@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AgentService } from 'src/app/services/agent.service';
 import { AgentStatus } from 'src/app/enums/agent-status.enum';
 import { map } from 'rxjs/operators';
@@ -17,7 +17,13 @@ export class NavComponent implements OnInit {
   selectedLanguage: string;
   loginDisplay = false;
 
-  constructor(private agentService: AgentService, private translateService: TranslateService) { 
+  constructor(
+    private agentService: AgentService, 
+    private translateService: TranslateService,
+    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
+    private authService: MsalService,
+    private msalBroadcastService: MsalBroadcastService
+  ) { 
     this.translateService.addLangs(['en']);
     this.translateService.setDefaultLang('en');
   }
@@ -34,7 +40,34 @@ export class NavComponent implements OnInit {
     this.translateService.use(value);
   }
 
-  login() {}
+  setLoginDisplay() {
+    this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+    console.log('display:', this.loginDisplay);
+  }
 
-  logout() {}
+  login() {
+    if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+      if (this.msalGuardConfig.authRequest){
+        this.authService.loginPopup({...this.msalGuardConfig.authRequest} as PopupRequest)
+          .subscribe((response: AuthenticationResult) => {
+            this.authService.instance.setActiveAccount(response.account);
+          });
+        } else {
+          this.authService.loginPopup()
+            .subscribe((response: AuthenticationResult) => {
+              this.authService.instance.setActiveAccount(response.account);
+            });
+      }
+    } else {
+      if (this.msalGuardConfig.authRequest){
+        this.authService.loginRedirect({...this.msalGuardConfig.authRequest} as RedirectRequest);
+      } else {
+        this.authService.loginRedirect();
+      }
+    }
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }
