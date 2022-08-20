@@ -7,7 +7,9 @@ export const environment = {
   ip: "localhost",
   issuerPort: "7001",
   holderPort: "8001",
-  verifierPort: "9001"
+  verifierPort: "9001",
+  clientId: "86dec68e-1957-4b9e-83e5-4361da165990",
+  authority: "https://login.microsoftonline.com/cf305aba-7c4f-4a23-8b2f-6e18acda1677"
 };
 
 /*
