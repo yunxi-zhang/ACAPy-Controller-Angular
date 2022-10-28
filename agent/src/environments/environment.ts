@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpsEnabled: false,
+  httpsEnabled: "false",
   httpsUrl: "",
   ip: "localhost",
   issuerPort: "7001",

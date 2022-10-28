@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class InterceptorService implements HttpInterceptor {
-  httpsEnabled: boolean;
+  httpsEnabled: string;
   httpsUrl: string;
   hostname: string;
   port: string;
@@ -18,7 +18,7 @@ export class InterceptorService implements HttpInterceptor {
 
   constructor(private spinner: SpinnerService) {
     this.httpsEnabled = environment.httpsEnabled;
-    if(this.httpsEnabled) {
+    if(Boolean(this.httpsEnabled)) {
       this.formattedAgentUrl = environment.httpsUrl;
       console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
     } else {
