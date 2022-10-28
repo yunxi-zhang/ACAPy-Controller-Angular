@@ -10,15 +10,23 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class InterceptorService implements HttpInterceptor {
+  httpsEnabled: string;
+  httpsUrl: string;
   hostname: string;
   port: string;
   formattedAgentUrl: string;
 
   constructor(private spinner: SpinnerService) {
-    this.hostname = environment.ip;
-    this.port =  environment.verifierPort;
-    this.formattedAgentUrl = `http://${this.hostname}` + ":" +this.port;
-    console.log('Verifier agent is running on: ' + this.formattedAgentUrl);
+    this.httpsEnabled = environment.httpsEnabled;
+    if(Boolean(this.httpsEnabled)) {
+      this.formattedAgentUrl = environment.httpsUrl;
+      console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
+    } else {
+      this.hostname = environment.ip;
+      this.port =  environment.issuerPort;
+      this.formattedAgentUrl = `http://${this.hostname}` + ":" + this.port;
+      console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
+    }
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler):
