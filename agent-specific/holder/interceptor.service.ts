@@ -23,7 +23,7 @@ export class InterceptorService implements HttpInterceptor {
       console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
     } else {
       this.hostname = environment.ip;
-      this.port =  environment.issuerPort;
+      this.port =  environment.holderPort;
       this.formattedAgentUrl = `http://${this.hostname}` + ":" + this.port;
       console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
     }
