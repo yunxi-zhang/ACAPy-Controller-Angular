@@ -18,7 +18,7 @@ export class InterceptorService implements HttpInterceptor {
 
   constructor(private spinner: SpinnerService) {
     this.httpsEnabled = environment.httpsEnabled;
-    if(Boolean(this.httpsEnabled)) {
+    if(this.httpsEnabled === 'true') {
       this.formattedAgentUrl = environment.httpsUrl;
       console.log('Issuer agent is running on: ' + this.formattedAgentUrl);
     } else {
