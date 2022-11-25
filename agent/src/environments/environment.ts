@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  httpsEnabled: "true",
-  httpsUrl: "https://hul7f0k24g.execute-api.us-east-1.amazonaws.com/test-stage",
-  ip: "54.173.62.80",
-  issuerPort: "9000",
+  httpsEnabled: "false",
+  httpsUrl: "",
+  ip: "localhost",
+  issuerPort: "7001",
   holderPort: "8001",
   verifierPort: "9001"
 };
