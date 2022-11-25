@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { AgentStatus } from '../enums/agent-status.enum';
 import { Observable, of } from 'rxjs';
 import { catchError, switchMap, map, tap } from 'rxjs/operators';
+const headers = new HttpHeaders()
+  .set('content-type', 'application/json');
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AgentService {
 
   //Call POST APIs
   agreeTAA(payload: any): Observable<any> {
-    return this.http.post<any>('/ledger/taa/accept', payload)
+    return this.http.post<any>('/ledger/taa/accept', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('agreeTAA', null))
@@ -21,7 +23,7 @@ export class AgentService {
   }
 
   createSchemas(payload: any): Observable<any> {
-    return this.http.post<any>('/schemas', payload)
+    return this.http.post<any>('/schemas', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('createSchemas', null))
@@ -29,7 +31,7 @@ export class AgentService {
   }
 
   createDefinition(payload: any): Observable<any> {
-    return this.http.post<any>('/credential-definitions', payload)
+    return this.http.post<any>('/credential-definitions', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('createDefinitions', null))
@@ -37,7 +39,7 @@ export class AgentService {
   }
 
   createInvitation(): Observable<any> {
-    return this.http.post<any>('/connections/create-invitation', {})
+    return this.http.post<any>('/connections/create-invitation', {}, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('createInvitation', null))
@@ -45,7 +47,7 @@ export class AgentService {
   }
 
   createCredentialRequest(payload: any): Observable<any> {
-    return this.http.post<any>('/issue-credential-2.0/send-proposal', payload)
+    return this.http.post<any>('/issue-credential-2.0/send-proposal', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('createCredentialRequest', null))
@@ -53,7 +55,7 @@ export class AgentService {
   }
 
   sendOffer(credExID: any, payload: any): Observable<any[]> {
-    return this.http.post<any[]>('/issue-credential-2.0/records/' + credExID + '/send-offer', payload)
+    return this.http.post<any[]>('/issue-credential-2.0/records/' + credExID + '/send-offer', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('sendOffer', null))
@@ -61,7 +63,7 @@ export class AgentService {
   }
 
   sendRequest(credExID): Observable<any> {
-    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/send-request', null)
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/send-request', null, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('sendRequest', null))
@@ -69,7 +71,7 @@ export class AgentService {
   }
 
   issueCredential(credExID: any, payload: any): Observable<any> {
-    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/issue', payload)
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/issue', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('issueCredential', null))
@@ -77,7 +79,7 @@ export class AgentService {
   }
 
   storeCredential(credExID: any): Observable<any> {
-    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/store', '{}')
+    return this.http.post<any>('/issue-credential-2.0/records/' + credExID + '/store', '{}', {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('storeCredential', null))
@@ -85,7 +87,7 @@ export class AgentService {
   }
 
   sendProofRequest(payload: any): Observable<any> {
-    return this.http.post<any>('/present-proof/send-request', payload)
+    return this.http.post<any>('/present-proof/send-request', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('sendProofRequest', null))
@@ -93,7 +95,7 @@ export class AgentService {
   }
 
   sendProofPresentation(presentationExchangeID: any, payload: any): Observable<any> {
-    return this.http.post<any>('/present-proof/records/' + presentationExchangeID + '/send-presentation', payload)
+    return this.http.post<any>('/present-proof/records/' + presentationExchangeID + '/send-presentation', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('sendProofPresentation', null))
@@ -101,7 +103,7 @@ export class AgentService {
   }
 
   verifyProofpresentation(presentationExchangeID: any): Observable<any> {
-    return this.http.post<any>('/present-proof/records/' + presentationExchangeID + '/verify-presentation', null)
+    return this.http.post<any>('/present-proof/records/' + presentationExchangeID + '/verify-presentation', null, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('verifyProofpresentation', null))
@@ -109,10 +111,30 @@ export class AgentService {
   }
 
   revokeCredential(payload: any): Observable<any> {
-    return this.http.post<any>('/revocation/revoke', payload)
+    return this.http.post<any>('/revocation/revoke', payload, {'headers': headers})
       .pipe(
         switchMap((response: any) => of(response)),
         catchError(this.handleError<any>('revokeCredential', null))
+      );
+  }
+
+  removeConnection(connectionId: string): Observable<any> {
+    if (!connectionId) {
+      console.error('Must provide a connection ID');
+      return;
+    }
+    return this.http.post<any>(`/connections/${connectionId}/remove`, {}, {'headers': headers})
+      .pipe(
+        switchMap(() => of(connectionId)),
+        catchError(this.handleError<any>('removeConnection', null))
+      );
+  }
+
+  receiveInvitation(invitation: any): Observable<any> {
+    return this.http.post<any>('/connections/receive-invitation', invitation, {'headers': headers})
+      .pipe(
+        switchMap((response: any) => of(response)),
+        catchError(this.handleError<any>('receiveInvitation', null))
       );
   }
 
@@ -170,26 +192,6 @@ export class AgentService {
       .pipe(
         switchMap((response: any) => of(response.results)),
         catchError(this.handleError<any[]>('getConnections', []))
-      );
-  }
-
-  removeConnection(connectionId: string): Observable<any> {
-    if (!connectionId) {
-      console.error('Must provide a connection ID');
-      return;
-    }
-    return this.http.post<any>(`/connections/${connectionId}/remove`, {})
-      .pipe(
-        switchMap(() => of(connectionId)),
-        catchError(this.handleError<any>('removeConnection', null))
-      );
-  }
-
-  receiveInvitation(invitation: any): Observable<any> {
-    return this.http.post<any>('/connections/receive-invitation', invitation)
-      .pipe(
-        switchMap((response: any) => of(response)),
-        catchError(this.handleError<any>('receiveInvitation', null))
       );
   }
 
