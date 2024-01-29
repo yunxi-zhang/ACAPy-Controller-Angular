@@ -14,5 +14,5 @@ phases:
       - ng build
 artifacts:
   files:
-    - /*
+    - agent/dist/issuer-controller/*
   name: issuer
