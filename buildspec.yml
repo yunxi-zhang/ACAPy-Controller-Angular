@@ -9,7 +9,7 @@ phases:
     on-failure: ABORT
     commands:
       - cd ./agent
-      - npm install -g @angular/cli@15
+      - npm install -g @angular/cli@12.2.13
       - npm install
       - ng build
 artifacts:
