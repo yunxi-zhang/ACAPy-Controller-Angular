@@ -4,12 +4,12 @@ phases:
   install:
     on-failure: ABORT
     runtime-versions:
-      nodejs: 18.x
+      nodejs: 14.x
   build:
     on-failure: ABORT
     commands:
       - cd ./agent
-      - npm install -g @angular/cli
+      - npm install -g @angular/cli@15
       - npm install
       - ng build
 artifacts:
