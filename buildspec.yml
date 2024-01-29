@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      nodejs: 14.18.1
+  build:
+    on-failure: ABORT
+    commands:
+      - cd ./agent
+      - npm install -g @angular/cli
+      - npm install
+      - ng build --configuration=production
+  artifacts:
+    files:
+      - agent/dist/issuer-controller/*
+    name: issuer
