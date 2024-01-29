@@ -12,7 +12,7 @@ phases:
       - npm install -g @angular/cli
       - npm install
       - ng build --configuration=production
-  artifacts:
-    files:
-      - agent/dist/issuer-controller/*
-    name: issuer
+artifacts:
+  files:
+    - agent/dist/issuer-controller/*
+  name: issuer
