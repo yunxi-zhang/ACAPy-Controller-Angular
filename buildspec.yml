@@ -12,18 +12,6 @@ phases:
       - npm install -g @angular/cli@12.2.13
       - npm install
       - ng build
-      - echo "show path"
-      - pwd
-      - cd ./dist
-      - ls -al
-      - cd ./issuer-controller
-      - ls -al
   post_build:
     commands:
-      - echo "show path again"
-      - pwd
-      - cd ./dist
-      - ls -al
-      - cd ./issuer-controller
-      - ls -al
       - aws s3 cp --recursive ./dist/issuer-controller/* s3://demo-issuer101/
