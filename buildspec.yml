@@ -13,4 +13,5 @@ phases:
       - npm install
       - ng build
   post_build:
+    commands:
       - aws s3 cp --recursive ./agent/dist/issuer-controller/* s3://demo-issuer101/
