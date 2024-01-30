@@ -12,7 +12,5 @@ phases:
       - npm install -g @angular/cli@12.2.13
       - npm install
       - ng build
-artifacts:
-  files:
-    - agent/dist/issuer-controller/*
-  name: issuer
+  post_build:
+      - aws s3 cp --recursive ./agent/dist/issuer-controller/* s3://demo-issuer101/
