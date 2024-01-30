@@ -13,9 +13,7 @@ phases:
       - npm install
       - ng build
       - echo "show path"
-      - ls -al
-      - cd ./agent/
-      - ls -al
+      - pwd
       - cd ./dist
       - ls -al
       - cd ./issuer-controller
@@ -23,11 +21,9 @@ phases:
   post_build:
     commands:
       - echo "show path again"
-      - ls -al
-      - cd ./agent/
-      - ls -al
+      - pwd
       - cd ./dist
       - ls -al
       - cd ./issuer-controller
-      - ls -al 
-      - aws s3 cp --recursive ./agent/dist/issuer-controller/* s3://demo-issuer101/
+      - ls -al
+      - aws s3 cp --recursive ./dist/issuer-controller/* s3://demo-issuer101/
