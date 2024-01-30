@@ -14,4 +14,4 @@ phases:
       - ng build
   post_build:
     commands:
-      - aws s3 cp --recursive ./dist/issuer-controller/* s3://demo-issuer101/
+      - aws s3 cp --recursive ./dist/issuer-controller s3://demo-issuer101/
